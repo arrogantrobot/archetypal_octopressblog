@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+
+<!-- By rob at archetyp.al
+
+Inspired by the one dimensional cellular-automata explored by
+Stephen Wolfram in "A New Kind of Science".
+
+There are many implementations of the one dimensional CA, but
+this particular project is meant to allow the user to explore the
+properties of the various rules by starting from initial conditions
+other than a single "on" cell in the center.
+
+This version still begins with the typical single "on" cell in the
+center at the first time-step or after a reset (r). However, the user
+can change the rule at any step, causing the output of the previous
+rule to be the input of the next rule. This leads to discoveries and
+an enjoyable interaction with the system and sense for how it works
+that does not come from merely reading about it or watching a single
+rule play out.  
+
+The rules between 129 and 135 play well together. Rule 90 is a strange
+and beautiful thing: http://en.wikipedia.org/wiki/Rule_90 . 
+-->
+
+
+<html lang="en"> 
+    <meta charset="utf-8"> 
+    <head>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" type="text/css" href="archetyp.css" />
+        <title>Cellular Automata Rule Explorer -- CARE</title>
+    </head>
+    <body onload="onInit()">
+        <script src="bit-array.js"></script>
+        <script src="base64.js"></script>
+        <script src="canvas2image.js"></script>
+        <script src="cellularAutomata.js"></script>
+        <div class="ca" id="ca"></div>
+        <div class="control_panel" id="control_panel">
+            <div class="column1" id="column1">
+                <h3 id="main_title"> Cellular Automata Rule Explorer</h3>
+                   <p class="address"><a href='index.html'>by rob at archetyp.al</a></p>
+                <hr />
+                <ul>
+                    <li> [Space Bar] pause and unpause</li>
+                    <li> [Left Arrow] decrement rule by one</li> 
+                    <li> [Right Arrow] increment rule by one</li> 
+                    <li> [s] save current image</li> 
+                    <li> [r] reset the image</li> 
+                </ul>
+                <hr />
+                <p>
+                    Rule #
+                    <input id="rule_textbox" type="text" value="129" />
+                    <button type="button" id="rule_submit">Change Rule</button>
+                </p>
+            </div>
+            <div class="column2" id="column2">
+                <canvas id="detail_can" class="detail_can"></canvas>
+            </div>
+        </div>
+    </body>
+    
+    
+</html>
+
+
+ 

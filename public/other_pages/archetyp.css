@@ -1,0 +1,134 @@
+body { 
+    background-color:black; 
+    margin:0px; 
+}
+
+.control_panel {
+    font-family: "Courier New",Monospace;
+    color:white;
+    font-size: 10pt;
+    position:relative;
+    top:400px;
+}
+
+.column1 {
+    border: solid 2px #ffffff;
+    float:left;
+    position:absolute;
+    width: 500px;
+    height: 241px;
+}
+.column2 {
+    float: right;
+    font-family: "Courier New",Monospace;
+    color:white;
+    position:absolute;
+    float: right;
+    top:0px;
+    right:0px;
+    border: solid 2px #ffffff;
+    padding: 1px;
+}
+
+.address {
+    text-align: center;
+}
+
+.ca {
+    position:relative;
+    top:0;
+    left:0;
+}
+
+.buff1 {
+    position:absolute;
+    top:2;
+    left:0;
+    visibility: hidden;
+    border: solid 2px #ffffff;
+}
+.buff2 {
+    position:absolute;
+    top:2;
+    left:0;
+    visibility: visible;
+    border: solid 2px #ffffff;
+}
+
+#rule_textbox {
+    width:50px;
+    text-align:right;
+}
+
+.address {
+    font-family: "Courier New",Monospace;
+    color: white;
+    font-size: 8pt;
+}
+    
+.header {
+    font-family: "Courier New",Monospace;
+    color: white;
+    text-align: center
+}
+
+
+.item {
+    color: white;
+}
+
+.item_header {
+    color: white;
+}
+
+a:link {
+    color: #aaaaaa;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #888888;
+    text-decoration: none;
+}
+a:hover {
+    color: #cccccc;
+    text-decoration: underline;
+}
+a:active {
+    color: #888888;
+    text-decoration: underline;
+}
+
+#main_title {
+    text-align: center;
+}
+
+.body_div {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 875px;
+}
+.main_content {
+    font-family: "Courier New",Monospace;
+    color: white;
+    text-align: justify;
+    width: 500px;
+    padding-left: 50px;
+    padding-right: 10px;
+    float: left;
+}
+
+.sidebar {
+    float: right;
+    text-align: left;
+    top: 0px;
+    right: 0px;
+    color: white;
+    width: 275px;
+    font-family: "Courier New",Monospace;
+    padding: 10px;
+}
+
+
+
