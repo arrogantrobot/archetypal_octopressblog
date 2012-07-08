@@ -4,7 +4,7 @@
   <title><![CDATA[Archetypal]]></title>
   <link href="http://archetyp.al/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2012-07-08T12:29:58-05:00</updated>
+  <updated>2012-07-08T12:33:24-05:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -12,14 +12,5 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
-  
-  <entry>
-    <title type="html"><![CDATA[test blog]]></title>
-    <link href="http://archetyp.al/blog/2012/07/04/test-blog/"/>
-    <updated>2012-07-04T19:41:00-05:00</updated>
-    <id>http://archetyp.al/blog/2012/07/04/test-blog</id>
-    <content type="html"><![CDATA[<p>Here is the content.</p>
-]]></content>
-  </entry>
   
 </feed>
