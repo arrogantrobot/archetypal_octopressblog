@@ -9,7 +9,7 @@ system("rake generate");
 system("git st");
 
 system("git add .");
-print color("green"), "==============================\n\n";
+print color("green"), "==============================\n";
 
 my $message;
 while( ! $message) {
@@ -19,6 +19,8 @@ while( ! $message) {
         print color("red"), "no message received, please enter a commit message.\n";
     }
 }
+print color("green"), "==============================\n";
+print color("reset");
 system("git commit -m \"$message\"");
 system("git push heroku master");
 
