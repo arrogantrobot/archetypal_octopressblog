@@ -10,8 +10,17 @@ function cae() {
     var pixelBufferOne; //= new Image();
     var pixelBufferTwo; //= new Image();
     var bufferFlag = 1;
+    var rules = [];
+    var line_count = 0;
+    var lines_until_switch = 50;
+    var minLines = 5;
+    var maxLines = 100;
 
-    var cell = function() {
+    var populateRules = function() {
+        rules = new Array(57,18,90,129,130,131,132,133);
+    }
+
+    var cellStruct = function() {
         this.color = 0xffffff;
         this.state = false;
     }
@@ -93,24 +102,72 @@ function cae() {
         }
     }
 
+    var isDead = function() {
+        var total = 0;
+        for (idx = 0; idx < cells.length; idx++) {
+            if (cells[idx].state) {
+                total += 1;
+            }
+        }
+        if ((total == width) || (total == 0)) {
+            return true;
+        }
+        return false;
+    }
+
+    var reset = function() {
+        cells = [];
+        for (count = 0; count < width; count++) {
+            cells.push(new cellStruct());
+        }
+        //if (Math.round(Math.random()) == 1) {
+            cells[Math.floor(width/2)].state = true;
+        /*} else {
+            for (cell in cells) {
+                cell.state = (Math.round(Math.random()) == 1) ? true : false;
+            }
+        }*/
+    }
+
+    var switchRule = function() {
+        if (line_count >= lines_until_switch) {
+            line_count = 0;
+            lines_until_switch = minLines + (Math.random() * ((maxLines - minLines) + 1));
+            return true;
+        }
+        return false;
+    }
+
+    var changeRule = function() {
+        rule = rules[Math.floor(Math.random() * rules.length)];
+    }
+
     var iterate = function() {
+        line_count++;
         copyPixels();
         drawRow();
         flipBuffers();
+        if (isDead()) {
+            reset();
+            changeRule();
+        } else {
+            if (switchRule()) {
+                console.log("changeRule");
+                changeRule();
+            }
+        }
     }
 
     this.draw = function() {
-        setInterval(function(){iterate()},5);
+        setInterval(function(){iterate()},17);
     }
 
     this.init = function(id) {
         setCanvasId(id);
         pixelBufferOne = m_context.createImageData(width, height - 1);
         pixelBufferTwo = m_context.createImageData(width, height - 1);
-        for (count = 0; count < width; count++) {
-            cells.push(new cell());
-        }
-        cells[Math.floor(width/2)].state = true;
+        populateRules();
+        reset();
         initMask();
     }
 
