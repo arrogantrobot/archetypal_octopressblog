@@ -1,0 +1,11 @@
+{% if site.linkedin_name and site.linkedin_vanity %}
+<section class="linkedin{% if site.linkedin_hidden %} linkedin-hidden{% endif %}">
+  <h1>
+    <a href="http://www.linkedin.com/in/{{ site.linkedin_vanity }}">
+      <img src="http://www.linkedin.com/img/webpromo/btn_in_20x15.png"
+           width="20" height="15" alt="View {{ site.linkedin_name }}'s
+                                       LinkedIn profile" />View my
+      profile</a>
+  </h1>
+</section>
+{% endif %}
