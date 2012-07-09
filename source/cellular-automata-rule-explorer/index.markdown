@@ -7,8 +7,6 @@ sharing: true
 footer: true
 ---
 
-#Cellular Automata Rule Explorer
-
 {% img /images/ca_image_2.png cellular automata art %}
 
 A much more in-depth explanation of [cellular automata][0] can be obtained from other, more eloquent sources. A particularly comprehensive and eloquent source can be found in [A New Kind of Science][1] by Stephen Wolfram. In brief, a cellular automaton (singular) is a system composed of multiple discrete units called cells. These units each maintain some form of internal state. This state is changed by the operating rules and the current state of the cell, along with the states of the neighboring cells, over some discrete time steps. 
@@ -53,11 +51,11 @@ The metaphor of death is appropriate for this phenomenon. For when the states of
 
 So in order to re-animate the automaton, a watcher is placed in the program loop. This watcher is looking for cell uniformity. When all cells are on or all cells are off, the watcher randomly chooses to re-seed the automaton with either a single variant cell in the center of the linear array of cells, or to visit each cell, with a 0.5 probability of turning each cell on. So when the automaton does die, it is immediately re-seeded with life, and the patterns can continue.
 
-[0] http://en.wikipedia.org/wiki/Cellular_automaton "cellulat automata"
-[1] http://www.amazon.com/gp/product/1579550088/ref=as_li_ss_tl?ie=UTF8&tag=archetypal-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1579550088 "new kind of science"
-[2] /other_pages/care.html "care"
-[3] http://en.wikipedia.org/wiki/Sierpinski_triangle "sierpinski triangle"
-[4] https://github.com/arrogantrobot/Cellular-Automata-Rule-Explorer "Cellular-Automata-Rule-Explorer"
-[5] http://automatown.org/tapestries "tapestry"
-[6] https://github.com/arrogantrobot/Cellular-Automata-Explorer "Cellular-Automata-Explorer"
-[7] http://www.reddit.com/r/math/comments/r6ps4/cellular_automata_rule_explorer_feed_the_output/ "reddit comments"
+[0]: http://en.wikipedia.org/wiki/Cellular_automaton "cellulat automata"
+[1]: http://www.amazon.com/gp/product/1579550088/ref=as_li_ss_tl?ie=UTF8&tag=archetypal-20&linkCode=as2&camp=1789&creative=390957&creativeASIN=1579550088 "new kind of science"
+[2]: /other_pages/care.html "care"
+[3]: http://en.wikipedia.org/wiki/Sierpinski_triangle "sierpinski triangle"
+[4]: https://github.com/arrogantrobot/Cellular-Automata-Rule-Explorer "Cellular-Automata-Rule-Explorer"
+[5]: http://automatown.org/tapestries "tapestry"
+[6]: https://github.com/arrogantrobot/Cellular-Automata-Explorer "Cellular-Automata-Explorer"
+[7]: http://www.reddit.com/r/math/comments/r6ps4/cellular_automata_rule_explorer_feed_the_output/ "reddit comments"

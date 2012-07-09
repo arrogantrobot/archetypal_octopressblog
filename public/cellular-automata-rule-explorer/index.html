@@ -9,7 +9,7 @@
   <meta name="author" content="Rob Long">
 
   
-  <meta name="description" content="Cellular-automata-rule-explorer Jul 8th, 2012 Cellular Automata Rule Explorer A much more in-depth explanation of [cellular automata][0] can be &hellip;">
+  <meta name="description" content="Cellular-automata-rule-explorer Jul 8th, 2012 A much more in-depth explanation of cellular automata can be obtained from other, more eloquent &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -82,11 +82,9 @@
 <time datetime="2012-07-08T15:57:00-05:00" pubdate data-updated="true">Jul 8<span>th</span>, 2012</time></p>
   </header>
   
-  <h1>Cellular Automata Rule Explorer</h1>
+  <p><img src="/images/ca_image_2.png" title="cellular automata art" ></p>
 
-<p><img src="/images/ca_image_2.png" title="cellular automata art" ></p>
-
-<p>A much more in-depth explanation of [cellular automata][0] can be obtained from other, more eloquent sources. A particularly comprehensive and eloquent source can be found in [A New Kind of Science][1] by Stephen Wolfram. In brief, a cellular automaton (singular) is a system composed of multiple discrete units called cells. These units each maintain some form of internal state. This state is changed by the operating rules and the current state of the cell, along with the states of the neighboring cells, over some discrete time steps.</p>
+<p>A much more in-depth explanation of <a href="http://en.wikipedia.org/wiki/Cellular_automaton" title="cellulat automata">cellular automata</a> can be obtained from other, more eloquent sources. A particularly comprehensive and eloquent source can be found in <a href="http://www.amazon.com/gp/product/1579550088/ref=as_li_ss_tl?ie=UTF8&amp;tag=archetypal-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1579550088" title="new kind of science">A New Kind of Science</a> by Stephen Wolfram. In brief, a cellular automaton (singular) is a system composed of multiple discrete units called cells. These units each maintain some form of internal state. This state is changed by the operating rules and the current state of the cell, along with the states of the neighboring cells, over some discrete time steps.</p>
 
 <h2>One Dimensional Cellular Automata</h2>
 
@@ -96,7 +94,7 @@
 
 <p>In the above example, cell B has two neighbors, cells A and C. So cell B&#8217;s state at time <em>t</em> will depend entirely upon the state of B at time <em>t - 1</em> and the states of A and C at time <em>t - 1</em>.</p>
 
-<p>An interesting effect occurs when the history of cell states is made visible over time. In the [cellular automata explorer][2], I have implemented just such a view. There is a single line of cells in this one-dimensional automaton. It lives at the top of the screen and pushes its old states, in the form of black and white pixels (one pixel per cell), down and off the screen. The pattern grows like a fingernail out of this line of cells. Initially there is one cell set to &#8220;on&#8221; in the middle of the screen. As the history builds up, a [pattern emerges][3] from the interaction of the individual cells, mediated by the rule, which is 129 by default.</p>
+<p>An interesting effect occurs when the history of cell states is made visible over time. In the <a href="/other_pages/care.html" title="care">cellular automata explorer</a>, I have implemented just such a view. There is a single line of cells in this one-dimensional automaton. It lives at the top of the screen and pushes its old states, in the form of black and white pixels (one pixel per cell), down and off the screen. The pattern grows like a fingernail out of this line of cells. Initially there is one cell set to &#8220;on&#8221; in the middle of the screen. As the history builds up, a <a href="http://en.wikipedia.org/wiki/Sierpinski_triangle" title="sierpinski triangle">pattern emerges</a> from the interaction of the individual cells, mediated by the rule, which is 129 by default.</p>
 
 <h2>An Archetypical Programming Project</h2>
 
@@ -106,17 +104,17 @@
 
 <h3>C++ / GTK</h3>
 
-<p>This implementation can be found on github under the name [Cellular-Automata-Rule-Explorer][4]. Aside from being the first implementation of this project, the C++/GTK version has some unique features.</p>
+<p>This implementation can be found on github under the name <a href="https://github.com/arrogantrobot/Cellular-Automata-Rule-Explorer" title="Cellular-Automata-Rule-Explorer">Cellular-Automata-Rule-Explorer</a>. Aside from being the first implementation of this project, the C++/GTK version has some unique features.</p>
 
-<p>There is an automated image capture feature which allows the user to automatically save the contents of the output to a png file on the file-system. This was triggered to happen each time a full screen of output had passed. This gives the ability to stitch together one continuous image showing the progress of the automaton over even a larger period of time than is possible in the program&#8217;s typical output. I refer to these longer images as [tapestries][5].</p>
+<p>There is an automated image capture feature which allows the user to automatically save the contents of the output to a png file on the file-system. This was triggered to happen each time a full screen of output had passed. This gives the ability to stitch together one continuous image showing the progress of the automaton over even a larger period of time than is possible in the program&#8217;s typical output. I refer to these longer images as <a href="http://automatown.org/tapestries" title="tapestry">tapestries</a>.</p>
 
 <p>A mechanism to vary the rules over time, without human intervention, was also added to this iteration of the project. The user may create a list of rules from which the program will randomly select at random intervals. This has the effect of producing a continuous stream of novel images, all containing rhyming motifs, resulting from applying the same rules repeatedly, to unique input configurations.</p>
 
 <h3>Javascript</h3>
 
-<p>The javascript implementation takes the form of a [web app][2]. The page is outlined by an html file, styled by a css file, and animated by the javascript portion of the project. This version of the web app accomplishes double buffering by using two canvas elements which are alternately hidden and shown. The old lines are copied and translated down one pixel to the hidden canvas, and the new line as drawn at the top. When this is completed, the shown canvas is hidden and the hidden show, effectively flipping the buffers. The source repository can be found on github under the name [Celluar-Automata-Explorer][6].</p>
+<p>The javascript implementation takes the form of a <a href="/other_pages/care.html" title="care">web app</a>. The page is outlined by an html file, styled by a css file, and animated by the javascript portion of the project. This version of the web app accomplishes double buffering by using two canvas elements which are alternately hidden and shown. The old lines are copied and translated down one pixel to the hidden canvas, and the new line as drawn at the top. When this is completed, the shown canvas is hidden and the hidden show, effectively flipping the buffers. The source repository can be found on github under the name <a href="https://github.com/arrogantrobot/Cellular-Automata-Explorer" title="Cellular-Automata-Explorer">Celluar-Automata-Explorer</a>.</p>
 
-<p>Upon the initial completion of the javascript cellular automata project, I [posted it to reddit.com/r/math][7] for comments and suggestions, some of which were incorporated into the project.</p>
+<p>Upon the initial completion of the javascript cellular automata project, I <a href="http://www.reddit.com/r/math/comments/r6ps4/cellular_automata_rule_explorer_feed_the_output/" title="reddit comments">posted it to reddit.com/r/math</a> for comments and suggestions, some of which were incorporated into the project.</p>
 
 <h3>Android</h3>
 
@@ -127,15 +125,6 @@
 <p>The metaphor of death is appropriate for this phenomenon. For when the states of all the cells in the automaton are identical, no more patterns may emerge. The only possible changes are entire rows of all black or all white. While there may be some oscillation between these two states depending upon the current rule, no columnar variation will ever be re-introduced.</p>
 
 <p>So in order to re-animate the automaton, a watcher is placed in the program loop. This watcher is looking for cell uniformity. When all cells are on or all cells are off, the watcher randomly chooses to re-seed the automaton with either a single variant cell in the center of the linear array of cells, or to visit each cell, with a 0.5 probability of turning each cell on. So when the automaton does die, it is immediately re-seeded with life, and the patterns can continue.</p>
-
-<p>[0] http://en.wikipedia.org/wiki/Cellular_automaton &#8220;cellulat automata&#8221;
-[1] http://www.amazon.com/gp/product/1579550088/ref=as_li_ss_tl?ie=UTF8&amp;tag=archetypal-20&amp;linkCode=as2&amp;camp=1789&amp;creative=390957&amp;creativeASIN=1579550088 &#8220;new kind of science&#8221;
-[2] /other_pages/care.html &#8220;care&#8221;
-[3] http://en.wikipedia.org/wiki/Sierpinski_triangle &#8220;sierpinski triangle&#8221;
-[4] https://github.com/arrogantrobot/Cellular-Automata-Rule-Explorer &#8220;Cellular-Automata-Rule-Explorer&#8221;
-[5] http://automatown.org/tapestries &#8220;tapestry&#8221;
-[6] https://github.com/arrogantrobot/Cellular-Automata-Explorer &#8220;Cellular-Automata-Explorer&#8221;
-[7] http://www.reddit.com/r/math/comments/r6ps4/cellular_automata_rule_explorer_feed_the_output/ &#8220;reddit comments&#8221;</p>
 
   
     <footer>
