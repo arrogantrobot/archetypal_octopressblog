@@ -9,7 +9,7 @@
   <meta name="author" content="Rob Long">
 
   
-  <meta name="description" content="Picture a tree. Let&#8217;s make it an oak tree, so most people in the northern hemisphere will have direct access to one. Over the course of the oak &hellip;">
+  <meta name="description" content="While attempting to embed the coderwall badges via the provided coderwall includes, I found that the default coderwall css/javascript was not playing &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -74,6 +74,42 @@
       
   <header>
     
+      <h1 class="entry-title"><a href="/blog/2012/07/08/octopress-coderwall-aside/">Octopress CoderWall Aside</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-08T22:22:00-05:00" pubdate data-updated="true">Jul 8<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>While attempting to embed the coderwall badges via the <a href="http://coderwall.com/api#blogbadge" title="coderwall badges">provided coderwall includes</a>, I found that the default coderwall css/javascript was not playing nicely with octopress. So, to the internets! There I found a nice post on this very topic, from the <a href="http://kagekirin.github.com/blog/2012/02/22/playing-with-octopress-custom-asides/" title="Code Alchemist">Code Alchemist</a> blog. He rolled his own solution, which even includes an &#8220;endorse&#8221; button. Not bad. Thanks!</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/blog/2012/07/08/archetypical-post/">Archetypical Post</a></h1>
     
     
@@ -122,6 +158,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/07/08/octopress-coderwall-aside/">Octopress CoderWall Aside</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/07/08/archetypical-post/">Archetypical Post</a>
       </li>
     
@@ -131,33 +171,6 @@
     <h1>Profile</h1>
     <p><a href="http://www.linkedin.com/in/robertlouislong">LinkedIn</a></p>
 </section>
-
-<section>
-  <h1>Coderwall Badges</h1>
-  <p>
-    <script type="text/javascript">
-      function display_coderwall(args) {
-        var badges = args["data"]["badges"];
-        var wall = '';
-        for ( var i = 0; i < badges.length; i++ ) {
-          var alt_txt = badges[i]["name"];
-          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
-          wall += '<a href="http://coderwall.com/arrogantrobot/"><img src="'
-            + badges[i]["badge"]
-            + '" width="48" height="48" alt="' + alt_txt
-            + '" title="' + title_txt
-            + '"/></a>';
-        }
-        document.write(wall);
-      }
-    </script>
-    <script src="http://coderwall.com/arrogantrobot.json?callback=display_coderwall"></script>
-  </p>
-  
-  <p><a href="http://coderwall.com/arrogantrobot"><img src="http://api.coderwall.com/arrogantrobot/endorsecount.png" /></a></p>
-  
-</section>
-
 
 <section>
   <h1>GitHub Repos</h1>
@@ -186,6 +199,33 @@
     });
   </script>
   <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/arrogantrobot/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/arrogantrobot.json?callback=display_coderwall"></script>
+  </p>
+  
+  <p><a href="http://coderwall.com/arrogantrobot"><img src="http://api.coderwall.com/arrogantrobot/endorsecount.png" /></a></p>
+  
 </section>
 
 

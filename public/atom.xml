@@ -4,7 +4,7 @@
   <title><![CDATA[Archetypal]]></title>
   <link href="http://archetyp.al/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2012-07-08T21:58:36-05:00</updated>
+  <updated>2012-07-08T22:29:59-05:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Octopress CoderWall Aside]]></title>
+    <link href="http://archetyp.al/blog/2012/07/08/octopress-coderwall-aside/"/>
+    <updated>2012-07-08T22:22:00-05:00</updated>
+    <id>http://archetyp.al/blog/2012/07/08/octopress-coderwall-aside</id>
+    <content type="html"><![CDATA[<p>While attempting to embed the coderwall badges via the <a href="http://coderwall.com/api#blogbadge" title="coderwall badges">provided coderwall includes</a>, I found that the default coderwall css/javascript was not playing nicely with octopress. So, to the internets! There I found a nice post on this very topic, from the <a href="http://kagekirin.github.com/blog/2012/02/22/playing-with-octopress-custom-asides/" title="Code Alchemist">Code Alchemist</a> blog. He rolled his own solution, which even includes an &#8220;endorse&#8221; button. Not bad. Thanks!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Archetypical Post]]></title>
