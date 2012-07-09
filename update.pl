@@ -28,9 +28,11 @@ system("git push heroku master");
 print color("green"), "==============================\n\n";
 print color("green"), "Done updating. Pushing backup to github...\n";
 print color("green"), "==============================\n\n";
+print color("reset");
 
 system("git push github master");
 
 print color("green"), "==============================\n\n";
 print color("blue"), "completed!\n";
 print color("green"), "==============================\n\n";
+print color("reset");
