@@ -131,7 +131,33 @@
     <h1>Profile</h1>
     <p><a href="http://www.linkedin.com/in/robertlouislong">LinkedIn</a></p>
 </section>
-<section class="coderwall" data-coderwall-username="arrogantrobot" data-coderwall-orientation="horizontal"></section>
+
+<section>
+  <h1>Coderwall Badges</h1>
+  <p>
+    <script type="text/javascript">
+      function display_coderwall(args) {
+        var badges = args["data"]["badges"];
+        var wall = '';
+        for ( var i = 0; i < badges.length; i++ ) {
+          var alt_txt = badges[i]["name"];
+          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
+          wall += '<a href="http://coderwall.com/arrogantrobot/"><img src="'
+            + badges[i]["badge"]
+            + '" width="48" height="48" alt="' + alt_txt
+            + '" title="' + title_txt
+            + '"/></a>';
+        }
+        document.write(wall);
+      }
+    </script>
+    <script src="http://coderwall.com/arrogantrobot.json?callback=display_coderwall"></script>
+  </p>
+  
+  <p><a href="http://coderwall.com/arrogantrobot"><img src="http://api.coderwall.com/arrogantrobot/endorsecount.png" /></a></p>
+  
+</section>
+
 
 <section>
   <h1>GitHub Repos</h1>

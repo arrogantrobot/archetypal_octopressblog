@@ -103,3 +103,6 @@ linkedin_hidden: false
 linkedin_name: Rob Long
 linkedin_vanity: robertlouislong
 
+#CoderWall
+coderwall_user: arrogantrobot
+coderwall_show_endorse_link: true
