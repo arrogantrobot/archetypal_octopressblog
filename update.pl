@@ -8,6 +8,7 @@ system("rake generate");
 system("git st");
 
 system("git add .");
+print "==============================\n\n\n";
 
 my $message;
 while( ! $message) {
