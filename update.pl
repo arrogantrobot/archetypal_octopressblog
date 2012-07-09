@@ -20,4 +20,8 @@ while( ! $message) {
 system("git commit -m \"$message\"");
 system("git push heroku master");
 
-print "Done updating.\n"
+print "Done updating. Pushing backup to github...\n";
+
+system("git push github master");
+
+print "completed!\n";
