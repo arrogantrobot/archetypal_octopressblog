@@ -2,27 +2,33 @@
 
 use strict;
 use warnings;
+use Term::ANSIColor;
 
 system("rake generate");
 
 system("git st");
 
 system("git add .");
-print "==============================\n\n\n";
+print color("green"), "==============================\n\n";
 
 my $message;
 while( ! $message) {
-    print "Enter commit message: ";
+    print color("green"), "Enter commit message: ";
     chomp($message = <>);
     if (not $message) {
-        print "no message received, please enter a commit message.\n";
+        print color("red"), "no message received, please enter a commit message.\n";
     }
 }
 system("git commit -m \"$message\"");
 system("git push heroku master");
 
-print "Done updating. Pushing backup to github...\n";
+
+print color("green"), "==============================\n\n";
+print color("green"), "Done updating. Pushing backup to github...\n";
+print color("green"), "==============================\n\n";
 
 system("git push github master");
 
-print "completed!\n";
+print color("green"), "==============================\n\n";
+print color("blue"), "completed!\n";
+print color("green"), "==============================\n\n";
