@@ -1,5 +1,5 @@
 body > header {
-  background: $header-bg;
+  background: -webkit-canvas(header_can);
   h1 {
     display: inline-block;
     margin: 0;
