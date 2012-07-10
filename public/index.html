@@ -43,6 +43,8 @@
     <canvas id="header_can" width="1000" height="200" />
     <script src="/javascripts/cae.js"></script>
     <script type="text/javascript">
+      header_can = document.getElementById("header_can");
+      header_can.width = Math.floor($(window).width() * 0.9);
       header_ca = new cae();
       header_ca.init("header_can");
       header_ca.draw();
