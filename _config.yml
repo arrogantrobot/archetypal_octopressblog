@@ -106,3 +106,7 @@ linkedin_vanity: robertlouislong
 #CoderWall
 coderwall_user: arrogantrobot
 coderwall_show_endorse_link: true
+
+#Header Stuff
+
+javascript_header: true
