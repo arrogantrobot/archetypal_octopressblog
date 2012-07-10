@@ -1,7 +1,9 @@
 <hgroup>
   {% if site.javascript_header %}
     <canvas id="header_can" width="600" height="200" style="float: right" />
-    <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+    <div align="left">
+      <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+    </div>
     {% if site.subtitle %}
       <h2>{{ site.subtitle }}</h2>
     {% endif %}
