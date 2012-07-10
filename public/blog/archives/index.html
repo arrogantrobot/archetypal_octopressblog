@@ -46,7 +46,10 @@ Jul 08 2012 posted in meta Cellular Automata &hellip;">
     <script src="/javascripts/cae.js"></script>
     <script type="text/javascript">
       header_can = document.getElementById("header_can");
-      header_can.width = Math.floor($(window).width() * 0.9);
+      win_width = $(window).width();
+      if (win_width <= 1000) {
+        header_can.width = Math.floor(win_width * 0.9);
+      }
       header_ca = new cae();
       header_ca.init("header_can");
       header_ca.draw();
