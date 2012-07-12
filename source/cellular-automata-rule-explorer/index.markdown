@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "cellular-automata-rule-explorer"
+title: "Cellular Automata Rule Explorer"
 date: 2012-07-08 15:57
 comments: true
 sharing: true
