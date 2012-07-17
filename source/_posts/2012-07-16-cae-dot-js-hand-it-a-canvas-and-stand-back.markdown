@@ -40,6 +40,7 @@ my_cae.setPixelsPerCell(5);
 
 The lower limit for pixels per cell is 1, with the upper limit being the min of the width and height of your canvas. Though one cell is going to make for a pretty boring display. Actually, now that I think of it, this would cause the cell to be its own neighbor...
 
+<canvas id="my_canvas" width="100" height="100"></canvas>
 <script type="text/javascript">
     my_cae = new cae();
     my_cae.init("my_canvas");
@@ -47,7 +48,6 @@ The lower limit for pixels per cell is 1, with the upper limit being the min of 
     my_cae.draw();
 </script>
 
-<canvas id="my_canvas" width="100" height="100"></canvas>
 
 
 [0]: https://github.com/arrogantrobot/cae.js "cae.js"
