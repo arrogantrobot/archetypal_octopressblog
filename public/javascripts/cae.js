@@ -30,7 +30,7 @@ function cae() {
     var maxLines = 25;
 
     //default pixels per cell to display
-    var pixPerCell = 100;
+    var pixPerCell = 10;
 
     var cellsWide;
     var cellsHigh;
