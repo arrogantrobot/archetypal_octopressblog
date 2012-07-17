@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | Archetypal]]></title>
   <link href="http://archetyp.al/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2012-07-16T22:18:16-05:00</updated>
+  <updated>2012-07-16T22:22:46-05:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -72,8 +72,8 @@
 
 <script type="text/javascript">
     my_cae = new cae();
-    my_cae.init("my_canvas");
     my_cae.setPixelsPerCell(100);
+    my_cae.init("my_canvas");
     my_cae.draw();
 </script>
 
