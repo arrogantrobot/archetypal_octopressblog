@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Octopress CoderWall Aside - Archetypal</title>
+  <title>cae.js: hand it a canvas and stand back - Archetypal</title>
   <meta name="author" content="Rob Long">
 
   
-  <meta name="description" content="While attempting to embed the coderwall badges via the provided coderwall includes, I found that the default coderwall css/javascript was not playing &hellip;">
+  <meta name="description" content="The cae.js project is a distillation of the cellular automaton built into the earlier cellular automata explorer project. It is a self-contained &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://archetyp.al/blog/2012/07/08/octopress-coderwall-aside/">
+  <link rel="canonical" href="http://archetyp.al/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -97,7 +97,7 @@
   
   <header>
     
-      <h1 class="entry-title">Octopress CoderWall Aside</h1>
+      <h1 class="entry-title">cae.js: Hand It a Canvas and Stand Back</h1>
     
     
       <p class="meta">
@@ -113,14 +113,56 @@
   
 
 
-<time datetime="2012-07-08T22:22:00-05:00" pubdate data-updated="true">Jul 8<span>th</span>, 2012</time>
+<time datetime="2012-07-16T20:49:00-05:00" pubdate data-updated="true">Jul 16<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>While attempting to embed the coderwall badges via the <a href="http://coderwall.com/api#blogbadge" title="coderwall badges">provided coderwall includes</a>, I found that the default coderwall css/javascript was not playing nicely with octopress. So, to the internets! There I found a nice post on this very topic, from the <a href="http://kagekirin.github.com/blog/2012/02/22/playing-with-octopress-custom-asides/" title="Code Alchemist">Code Alchemist</a> blog. He rolled his own solution, which even includes an &#8220;endorse&#8221; button. Not bad. Thanks!</p>
+<div class="entry-content"><p>The <a href="https://github.com/arrogantrobot/cae.js" title="cae.js">cae.js project</a> is a distillation of the cellular automaton built into the earlier <a href="https://github.com/arrogantrobot/Cellular-Automata-Explorer" title="cellular automata explorer">cellular automata explorer</a> project. It is a self-contained <a href="http://www.webmonkey.com/2010/02/make_oop_classes_in_javascript/" title="functions all the way down">javascript class</a>. It can instantiated thusly:</p>
+
+<p>First, include the cae.js source in your html:</p>
+
+<figure class='code'><figcaption><span>include cae.js  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/javascripts/cae.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then create an instance of cae:</p>
+
+<figure class='code'><figcaption><span>create a new cae object and start it  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">my_cae</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cae</span><span class="p">();</span>
+</span><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s2">&quot;my_canvas&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And that&#8217;s it. Just replace &#8220;my_canvas&#8221; with the id of the canvas you&#8217;d like cae to draw upon, and it will determine the proper width and height. There are a few more moving pieces to fiddle with if you like.</p>
+
+<p>First, frames per second:</p>
+
+<figure class='code'><figcaption><span>frames per second  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">setFramesPerSecond</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Depending upon your processor and browser, your outcome will vary greatly.</p>
+
+<p>You can also set the number of pixels per cell:</p>
+
+<figure class='code'><figcaption><span>pixels per cell  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">setPixelsPerCell</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The lower limit for pixels per cell is 1, with the upper limit being the min of the width and height of your canvas. Though one cell is going to make for a pretty boring display. Actually, now that I think of it, this would cause the cell to be its own neighbor&#8230;</p>
 </div>
 
 
@@ -143,12 +185,12 @@
   
 
 
-<time datetime="2012-07-08T22:22:00-05:00" pubdate data-updated="true">Jul 8<span>th</span>, 2012</time>
+<time datetime="2012-07-16T20:49:00-05:00" pubdate data-updated="true">Jul 16<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/meta/'>meta</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>
+    <a class='category' href='/blog/categories/cellular-automata/'>cellular-automata</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>
   
 </span>
 
@@ -157,7 +199,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://archetyp.al/blog/2012/07/08/octopress-coderwall-aside/" data-via="plantimals" data-counturl="http://archetyp.al/blog/2012/07/08/octopress-coderwall-aside/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://archetyp.al/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/" data-via="plantimals" data-counturl="http://archetyp.al/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -168,10 +210,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/07/08/archetypical-post/" title="Previous Post: Archetypical Post">&laquo; Archetypical Post</a>
+        <a class="basic-alignment left" href="/blog/2012/07/08/octopress-coderwall-aside/" title="Previous Post: Octopress CoderWall Aside">&laquo; Octopress CoderWall Aside</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/" title="Next Post: cae.js: hand it a canvas and stand back">cae.js: hand it a canvas and stand back &raquo;</a>
       
     </p>
   </footer>
@@ -315,8 +355,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://archetyp.al/blog/2012/07/08/octopress-coderwall-aside/';
-        var disqus_url = 'http://archetyp.al/blog/2012/07/08/octopress-coderwall-aside/';
+        var disqus_identifier = 'http://archetyp.al/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/';
+        var disqus_url = 'http://archetyp.al/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/';
         var disqus_script = 'embed.js';
       
     (function () {

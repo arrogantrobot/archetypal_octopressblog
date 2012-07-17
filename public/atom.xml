@@ -4,7 +4,7 @@
   <title><![CDATA[Archetypal]]></title>
   <link href="http://archetyp.al/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2012-07-12T22:26:40-05:00</updated>
+  <updated>2012-07-16T21:45:54-05:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -12,6 +12,57 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[cae.js: hand it a canvas and stand back]]></title>
+    <link href="http://archetyp.al/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/"/>
+    <updated>2012-07-16T20:49:00-05:00</updated>
+    <id>http://archetyp.al/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back</id>
+    <content type="html"><![CDATA[<p>The <a href="https://github.com/arrogantrobot/cae.js" title="cae.js">cae.js project</a> is a distillation of the cellular automaton built into the earlier <a href="https://github.com/arrogantrobot/Cellular-Automata-Explorer" title="cellular automata explorer">cellular automata explorer</a> project. It is a self-contained <a href="http://www.webmonkey.com/2010/02/make_oop_classes_in_javascript/" title="functions all the way down">javascript class</a>. It can instantiated thusly:</p>
+
+<p>First, include the cae.js source in your html:</p>
+
+<figure class='code'><figcaption><span>include cae.js  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/javascripts/cae.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Then create an instance of cae:</p>
+
+<figure class='code'><figcaption><span>create a new cae object and start it  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">my_cae</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cae</span><span class="p">();</span>
+</span><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s2">&quot;my_canvas&quot;</span><span class="p">);</span>
+</span><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>And that&#8217;s it. Just replace &#8220;my_canvas&#8221; with the id of the canvas you&#8217;d like cae to draw upon, and it will determine the proper width and height. There are a few more moving pieces to fiddle with if you like.</p>
+
+<p>First, frames per second:</p>
+
+<figure class='code'><figcaption><span>frames per second  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">setFramesPerSecond</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Depending upon your processor and browser, your outcome will vary greatly.</p>
+
+<p>You can also set the number of pixels per cell:</p>
+
+<figure class='code'><figcaption><span>pixels per cell  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">setPixelsPerCell</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The lower limit for pixels per cell is 1, with the upper limit being the min of the width and height of your canvas. Though one cell is going to make for a pretty boring display. Actually, now that I think of it, this would cause the cell to be its own neighbor&#8230;</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Octopress CoderWall Aside]]></title>
