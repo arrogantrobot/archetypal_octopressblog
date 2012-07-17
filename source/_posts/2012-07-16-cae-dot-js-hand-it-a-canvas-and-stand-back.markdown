@@ -48,6 +48,17 @@ The lower limit for pixels per cell is 1, with the upper limit being the min of 
     my_cae.draw();
 </script>
 
+I admit, it's not very exciting. I think I just invented the zero-dimensional cellular automata.
+
+Now to something much more exciting:
+
+<canvas id="my_other_canvas" width="300" height="700"></canvas>
+<script type="text/javascript">
+    my_other_cae = new cae();
+    my_other_cae.setPixelsPerCell(5);
+    my_other_cae.init("my_other_canvas");
+    my_other_cae.draw();
+</script>
 
 
 [0]: https://github.com/arrogantrobot/cae.js "cae.js"
