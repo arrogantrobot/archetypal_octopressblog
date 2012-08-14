@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: bioinformatics | Archetypal]]></title>
+  <link href="http://archetyp.al/blog/categories/bioinformatics/atom.xml" rel="self"/>
+  <link href="http://archetyp.al/"/>
+  <updated>2012-08-13T19:49:29-05:00</updated>
+  <id>http://archetyp.al/</id>
+  <author>
+    <name><![CDATA[Rob Long]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Convert your 23andme raw data into VCF format]]></title>
+    <link href="http://archetyp.al/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format/"/>
+    <updated>2012-08-13T18:36:00-05:00</updated>
+    <id>http://archetyp.al/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format</id>
+    <content type="html"><![CDATA[<p>A week ago I received my results from <a href="http://www.23andme.com" title="23andme.com">23andme.com</a>. Aside from the obvious points of interest, health risks, heritage, neanderthal composition, etc., I was also interested in getting my own data in raw format. While 23andme does provide a way to download your "raw" data, they are not really providing raw data. One cannot access the image data from the microarray sequencer that they used. What they do provide is formatted as follows:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;h1>rsid  chromosome  position    genotype&lt;/h1>
+</span><span class='line'>
+</span><span class='line'>&lt;p>rs4477212   1   82154   TT
+</span><span class='line'>rs3094315   1   752566  TC
+</span><span class='line'>rs3131972   1   752721  AA
+</span><span class='line'>rs12124819  1   776546  AC
+</span><span class='line'>rs11240777  1   798959  GA
+</span><span class='line'>rs6681049   1   800007  CC</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Rows that begin with a '#' are header rows, of which, there may be as many as you please. 23andme puts some data in here, like which reference the coordinates are based on. This is an interesting topic as the build being used has just recently changed from hg18 to hg19. If you downloaded your raw data before August 9, 2012, you have hg18, after, and you have hg19. However, someone forgot to update the header to reflect this, so it still reads "build36".</p>
+
+<p>The rsid column is a unique identifier for reference SNP identifier from <a href="http://www.ncbi.nlm.nih.gov/SNP/get_html.cgi?whichHtml=how_to_submit#REFSNP" title="dbSNP">dbSNP</a>. These identifiers were more useful before the completion of the human genome project, as there was no coordinate system capable of resolving the locations of these various SNP's. Now it is possible to address them like you might address a house, with the State or City being analogous to the chromosome and the street address being analogous to the "position". The position is the number of bases from the beginning of the chromosome that a SNP is located at.</p>
+
+<p>The final column is the genotype at the listed address. There are two bases listed because humans have two copies of each chromosome.</p>
+
+<h2>VCF Format</h2>
+
+<p>So this leaves us with a list of addresses. This is well and good, but many bioinformatics applications use a different format, not all that different, called the <a href="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41" title="VCF format">"Variant Call Format"</a>. Specifically, a tool for predicting the biological effects of mutations (bases different than the reference bases), uses the VCF format. It is <a href="http://snpeff.sourceforge.net/" title="snpEff">snpEff</a>, or SNP effect predictor.</p>
+
+<p>In order to facilitate the use of the various and sundry tools that use the VCF format, I have made a tool for converting the 23andme raw format to VCF. It is the <a href="https://github.com/arrogantrobot/23andme2vcf" title="23andme2vcf converter">23andme2vcf converter</a>. In order to use it, follow these steps:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/arrogantrobot/23andme2vcf.git
+</span><span class='line'>cd 23andme2vcf
+</span><span class='line'>perl 23andme2vcf.pl /path/to/23andme/raw/data.zip /desired/path/to/output.vcf</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>If you do not use git, you may download the tarball from <a href="https://github.com/arrogantrobot/23andme2vcf/tarball/master" title="23andme2vcf converter tarball">github</a>, unpack it, and run line 3 of the above commands.</p>
+]]></content>
+  </entry>
+  
+</feed>
