@@ -4,7 +4,7 @@
   <title><![CDATA[Archetypal]]></title>
   <link href="http://archetyp.al/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2012-08-13T19:49:29-05:00</updated>
+  <updated>2012-08-19T19:57:22-05:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -12,6 +12,64 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Iterated Prisoner's Dilemma]]></title>
+    <link href="http://archetyp.al/blog/2012/08/19/iterated-prisoners-dilemma/"/>
+    <updated>2012-08-19T17:55:00-05:00</updated>
+    <id>http://archetyp.al/blog/2012/08/19/iterated-prisoners-dilemma</id>
+    <content type="html"><![CDATA[<p>I recently decided to re-read a book I had read long ago, in order that I might filter it through the knowledge and experience I&#8217;ve accrued since I first read it. It occurred to me that so much of what I have done in the intervening years has an impact on my understanding of it, that I could scarcely hold a conversation with my past self on the topic. The book in question is <a href="http://www.amazon.com/gp/product/B000SEHIG2/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B000SEHIG2&amp;linkCode=as2&amp;tag=archetypal-20" title="The Selfish Gene, by Richard Dawkins">The Selfish Gene</a> by <a href="http://en.wikipedia.org/wiki/Richard_Dawkins" title="Richard Dawkins">Richard Dawkins</a>.</p>
+
+<p>Dawkins&#8217; main point in the book is his thesis that species are not the salient unit of evolution, nor are individuals. The indivisible atomic unit of evolution, according to Dawkins, is the gene. The term &#8220;gene&#8221; has taken on a very specific technical meaning, that of a single stretch of DNA which can <a href="http://en.wikipedia.org/wiki/Transcription_(genetics)" title="transcription">transcribed</a> into <a href="http://en.wikipedia.org/wiki/Transcription_(genetics)" title="RNA">RNA</a>, then <a href="http://en.wikipedia.org/wiki/Translation_(biology)" title="translation">translated</a> into a protein. However, Dawkins explains that his intent is to refer to the minimum stretch of DNA required to encode a <a href="http://en.wikipedia.org/wiki/Phenotype" title="phenotype">phenotype</a>. One of the consequences of Dawkins&#8217; view on the topic of evolution is that the biological units we think of as individuals, i.e. a specific instance of a species, are actually vehicles manifested by genes in order to further replicate themselves.</p>
+
+<p>Upon initial inspection, this idea seems obvious. This sense of &#8220;obviousness&#8221; is how to detect a remarkably good idea. While it may seem obvious, there must have been some individual to point it out to everyone else first, and this case, it was Dawkins. The best analogy I can make is that of Darwinian Evolution. It seems so painfully obvious, yet it took tens of thousands of years, so far as we know, for humans to produce this idea.</p>
+
+<p>Indeed, as I read The Selfish Gene once more, I found myself totally engrossed in it. Each chapter is well constructed as an efficient implement to ram home the message of its author. One chapter in particular caught my attention this time around: &#8220;Nice Guys Finish First&#8221;. This is the chapter in which some of the game-theoretic ideas behind the Selfish Gene theory are elucidated via the example of <a href="http://en.wikipedia.org/wiki/Prisoner%27s_dilemma#The_iterated_prisoners.27_dilemma" title="Iterated Prisoner's Dilemma">Iterated Prisoner&#8217;s Dilemma</a>.</p>
+
+<p>The singleton version, simply Prisoner&#8217;s Dilemma, is a <a href="http://en.wikipedia.org/wiki/Symmetric_game#Symmetry_in_2x2_games" title="2x2 games">2x2 game</a>, where there are only two players, with each player simultaneously playing one of two strategies. In this case, the two available strategies are cooperation and defection. If both players cooperate, they both receive a reward, 3 points. If one player chooses cooperation and one chooses defection, the cooperator receives zero points and the defector receives 5 points. If both defect, both players receive 1 point. So in the singleton version of the game, the rational actor with always choose defection. However, if the game is played multiple times between the same two players, a channel of communication is opened which can allow coordination, along with deception. If both players cooperate, the highest total points will be generated, as <em>3 + 3 > 5 + 0</em>.</p>
+
+<p>The discussion of the various strategies goes on at length in <a href="http://www.amazon.com/gp/product/B000SEHIG2/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B000SEHIG2&amp;linkCode=as2&amp;tag=archetypal-20" title="The Selfish Gene, by Richard Dawkins">The Selfish Gene</a>, and is recapped somewhat in a very interesting <a href="http://www.radiolab.org/blogs/radiolab-blogland/2010/dec/14/prisoners-dilemma/" title="radiolab">episode of Radiolab</a>. I was inspired by the discussion to implement my own instance of <a href="https://github.com/arrogantrobot/iterated-prisoners-dilemma" title="ipd">iterated prisoner&#8217;s dilemma in java</a>.</p>
+
+<p>I am still in the early phases of this development. I have roughed in the classes for players and made two example strategies. One is the &#8220;Random&#8221; strategy which simply flips a coin each time and goes with that. I also implemented a widely discussed strategy called &#8220;Tit for Tat&#8221; which starts out cooperating, but will mirror the other player&#8217;s last play after the first. So if two T.F.T players meet, they will sail through, cooperating the whole way. If you would like to add a strategy, please do so! Here is my Tit for Tat implementation:</p>
+
+<figure class='code'><figcaption><span>Tit for Tat Strategy </span><a href='http://github.com/arrogantrobot/iterated-prisoners-dilemma/blob/master/iterated-prisoners-dilemma/src/main/java/com/farawaylabs/ipd/TitForTat.java'>TitForTat.java </a></figcaption> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">farawaylabs</span><span class="o">.</span><span class="na">ipd</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kd">class</span> <span class="nc">TitForTat</span> <span class="kd">extends</span> <span class="n">Player</span> <span class="o">{</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">lastPlay</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="nf">TitForTat</span><span class="o">()</span> <span class="o">{}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">getPlay</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">lastPlay</span><span class="o">;}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="nd">@Override</span>
+</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">result</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span><span class="k">this</span><span class="o">.</span><span class="na">lastPlay</span> <span class="o">=</span> <span class="n">result</span><span class="o">;}</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPlayerName</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="s">&quot;TitForTat&quot;</span><span class="o">;}</span>
+</span><span class='line'><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The <em>getPlay()</em> method returns a boolean, with <em>true</em> being cooperation and <em>false</em> being defection. The <em>result()</em> method gets called after each round, feeding the other player&#8217;s choice back to the agent, just in case it needs to do something with this, as Tit for Tat does. The <em>getPlayerName()</em> returns a string naming the strategy.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Convert your 23andme raw data into VCF format]]></title>
