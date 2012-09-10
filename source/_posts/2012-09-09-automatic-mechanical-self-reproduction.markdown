@@ -6,7 +6,7 @@ comments: true
 categories: [a-life, cellular-automata]
 ---
 
-While reading [Artificial Life: A Report From the Frontier Where Computers Meet Biology] by Steven Levy, I came across a reference to self-reproducing structures built by [Lionel][1] and [Roger Penrose][2]. These structures were small plywood cutouts fitted with various shapes and levers which allowed them to link up, or not, when coming into contact with another block of the same make. See the following two part short film about this project:
+While reading [Artificial Life: A Report From the Frontier Where Computers Meet Biology][0] by Steven Levy, I came across a reference to self-reproducing structures built by [Lionel][1] and [Roger Penrose][2]. These structures were small plywood cutouts fitted with various shapes and levers which allowed them to link up, or not, when coming into contact with another block of the same make. See the following two part short film about this project:
 
 <iframe src="http://player.vimeo.com/video/10297756" width="500" height="375" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> <p><a href="http://vimeo.com/10297756">Automatic Mechanical Self Replication (part 1)</a> from <a href="http://vimeo.com/user2935790">chead</a> on <a href="http://vimeo.com">Vimeo</a>.</p>
 
