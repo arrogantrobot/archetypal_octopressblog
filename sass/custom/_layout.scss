@@ -21,12 +21,6 @@
 //$sidebar-width-wide: 300px;
 body > header h1:before {
       content:"";
-      position:absolute;
-      left:0em;
-      right:0;
-      top:1.5em;
-      height:110px;
-      width:110px;
       overflow:hidden;
       text-align:right;
       background-image:url('/images/header_background.png');
