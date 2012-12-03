@@ -4,7 +4,7 @@
   <title><![CDATA[Archetypal]]></title>
   <link href="http://archetyp.al/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2012-12-02T21:36:04-06:00</updated>
+  <updated>2012-12-03T00:04:00-06:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -229,6 +229,9 @@
 <p>The lower limit for pixels per cell is 1, with the upper limit being the min of the width and height of your canvas. Though one cell is going to make for a pretty boring display. Actually, now that I think of it, this would cause the cell to be its own neighbor&#8230;</p>
 
 <p><canvas id="my_canvas" width="100" height="100"></canvas></p>
+
+<script src="http://archetyp.al/javascripts/cae.js"></script>
+
 
 <script type="text/javascript">
     my_cae = new cae();
