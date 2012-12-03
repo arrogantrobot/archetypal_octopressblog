@@ -14,9 +14,11 @@ This project began simply as a command line cellular automaton and grew to becom
 
 This causes the source material to be extruded through the pattern of the cellular automaton. I have used the same method applied in my android live wallpaper [Emergent Wallpaper] [4] of randomly picking from a short list of interesting rules and allowing that rule to play out for a random interval before randomly selecting a rule from the list again and changing to it. This results in a continuous stream of non-repeating patterns without the need for human intervention. So the user of Textruder need only run the app and provide input, and the rest will happen automatically.
 
+Navigate to [this text file] [5] to see a small example output text.
 
 [0]: https://github.com/arrogantrobot/textruder "textruder github"
 [1]: http://archetyp.al/cellular-automata-rule-explorer "cellular automata rule explorer"
 [2]: http://www.stephenwolfram.com/publications/articles/ca/83-cellular/ "wolfram 1983"
 [3]: http://www.cmake.org/ "cmake website"
 [4]: https://play.google.com/store/apps/details?id=com.farawaylabs.android.emergentwallpaper "Emergent Wallpaper"
+[5]: http://archetyp.al/assets/textruder_demo.txt "textruder demo"

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | Archetypal]]></title>
   <link href="http://archetyp.al/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2012-12-02T21:23:10-06:00</updated>
+  <updated>2012-12-02T21:28:57-06:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -25,6 +25,8 @@
 <p>This project began simply as a command line cellular automaton and grew to become something a little bigger. It is now a program which will "extrude" any ascii printable text through the pattern of a one-dimensional cellular automaton. So instead of simply printing out a "*" character each time an "on" cell was encountered, I decided to print the next character of the specified source material. Textruder accepts both ascii text files and standard in.</p>
 
 <p>This causes the source material to be extruded through the pattern of the cellular automaton. I have used the same method applied in my android live wallpaper <a href="https://play.google.com/store/apps/details?id=com.farawaylabs.android.emergentwallpaper" title="Emergent Wallpaper">Emergent Wallpaper</a> of randomly picking from a short list of interesting rules and allowing that rule to play out for a random interval before randomly selecting a rule from the list again and changing to it. This results in a continuous stream of non-repeating patterns without the need for human intervention. So the user of Textruder need only run the app and provide input, and the rest will happen automatically.</p>
+
+<p>Navigate to <a href="http://archetyp.al/assets/textruder_demo.txt" title="textruder demo">this text file</a> to see a small example output text.</p>
 ]]></content>
   </entry>
   
