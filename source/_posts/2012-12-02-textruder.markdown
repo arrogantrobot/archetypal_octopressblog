@@ -16,6 +16,22 @@ This causes the source material to be extruded through the pattern of the cellul
 
 Navigate to [this text file] [5] to see a small example output text.
 
+In order to run this yourself, you'll need to build textruder. This requires that you have cmake.
+
+{% codeblock Compile and run Textruder %}
+
+git clone git@github.com:arrogantrobot/textruder.git
+
+cd textruder
+
+cmake .
+
+make
+
+yes | ./textruder
+
+{% endcodeblock %}
+
 [0]: https://github.com/arrogantrobot/textruder "textruder github"
 [1]: http://archetyp.al/cellular-automata-rule-explorer "cellular automata rule explorer"
 [2]: http://www.stephenwolfram.com/publications/articles/ca/83-cellular/ "wolfram 1983"

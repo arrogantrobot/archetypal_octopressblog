@@ -115,6 +115,31 @@
 <p>This causes the source material to be extruded through the pattern of the cellular automaton. I have used the same method applied in my android live wallpaper <a href="https://play.google.com/store/apps/details?id=com.farawaylabs.android.emergentwallpaper" title="Emergent Wallpaper">Emergent Wallpaper</a> of randomly picking from a short list of interesting rules and allowing that rule to play out for a random interval before randomly selecting a rule from the list again and changing to it. This results in a continuous stream of non-repeating patterns without the need for human intervention. So the user of Textruder need only run the app and provide input, and the rest will happen automatically.</p>
 
 <p>Navigate to <a href="http://archetyp.al/assets/textruder_demo.txt" title="textruder demo">this text file</a> to see a small example output text.</p>
+
+<p>In order to run this yourself, you&#8217;ll need to build textruder. This requires that you have cmake.</p>
+
+<figure class='code'><figcaption><span>Compile and run Textruder </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:arrogantrobot/textruder.git
+</span><span class='line'>
+</span><span class='line'>cd textruder
+</span><span class='line'>
+</span><span class='line'>cmake .
+</span><span class='line'>
+</span><span class='line'>make
+</span><span class='line'>
+</span><span class='line'>yes | ./textruder</span></code></pre></td></tr></table></div></figure>
+
+
+
 </div>
   
   
