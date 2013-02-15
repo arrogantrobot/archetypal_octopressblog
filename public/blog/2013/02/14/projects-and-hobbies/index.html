@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Automatic Mechanical Self Reproduction - Archetypal</title>
+  <title>A mental steam shovel - Archetypal</title>
   <meta name="author" content="Rob Long">
 
   
-  <meta name="description" content="While reading Artificial Life: A Report From the Frontier Where Computers Meet Biology by Steven Levy, I came across a reference to self-reproducing &hellip;">
+  <meta name="description" content="A month ago I was hanging out with my friend Chris. We were having our weekly meetup, talking about our approach to our work, recent experiences, and &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://archetyp.al/blog/2012/09/09/automatic-mechanical-self-reproduction/">
+  <link rel="canonical" href="http://archetyp.al/blog/2013/02/14/projects-and-hobbies/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -80,7 +80,7 @@
   
   <header>
     
-      <h1 class="entry-title">Automatic Mechanical Self Reproduction</h1>
+      <h1 class="entry-title">A Mental Steam Shovel</h1>
     
     
       <p class="meta">
@@ -96,24 +96,36 @@
   
 
 
-<time datetime="2012-09-09T22:54:00-05:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
+<time datetime="2013-02-14T23:41:00-06:00" pubdate data-updated="true">Feb 14<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>While reading <a href="http://www.amazon.com/gp/product/0679743898/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0679743898&amp;linkCode=as2&amp;tag=archetypal-20" title="Artificial Life">Artificial Life: A Report From the Frontier Where Computers Meet Biology</a> by Steven Levy, I came across a reference to self-reproducing structures built by <a href="http://en.wikipedia.org/wiki/Lionel_Penrose" title="Lionel Penrose">Lionel</a> and <a href="http://en.wikipedia.org/wiki/Roger_Penrose" title="Roger Penrose">Roger Penrose</a>. These structures were small plywood cutouts fitted with various shapes and levers which allowed them to link up, or not, when coming into contact with another block of the same make. See the following two part short film about this project:</p>
+<div class="entry-content"><p>A month ago I was hanging out with my friend <a href="http://excid3.com" title="excid3.com">Chris</a>. We were having our weekly meetup, talking about our approach to our work, recent experiences, and just enjoying our <a href="http://www.thecivillifebrewingcompany.com/TheCivilLife/Welcome.html" title="civil life brewing company">surroundings</a>. I noticed a connect four game sitting in the corner, on a dark wooden ledge. The old, disjoint of additive and subtractive primary colors, blue and yellow plastic version of the game would have done the trick, but this was even better. It was a wooden version of the board. There were two wooden dowels, each half the width of the board, inserted just beneath the bottom row, which held the pieces in the board. When you draw them out, one from each side, the game is reset and the pieces fall to the bottom of the game board.</p>
 
-<iframe src="http://player.vimeo.com/video/10297756" width="500" height="375" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<p>“I&#8217;m sure there&#8217;s some simple heuristics to this I&#8217;ve long since forgotten.”</p>
 
+<p>“Yeah, I used to play this all the time.”</p>
 
-<p> <p><a href="http://vimeo.com/10297756">Automatic Mechanical Self Replication (part 1)</a> from <a href="http://vimeo.com/user2935790">chead</a> on <a href="http://vimeo.com">Vimeo</a>.</p></p>
+<p>“What&#8217;s the quickest way to lose&#8230;? Oh right, allow the opponent to get three in a row on the bottom with an open slot to the right and left.”</p>
 
-<iframe src="http://player.vimeo.com/video/10298933" width="500" height="375" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<p>And on and on we went. We played for almost an hour until we hit upon an improvement.</p>
 
+<p>“Let&#8217;s enact the chess rules around checkmate. You have to call check, and you can&#8217;t move in a way that will cause you to lose the game on the next turn.”</p>
 
-<p> <p><a href="http://vimeo.com/10298933">Automatic Mechanical Self Replication (part 2)</a> from <a href="http://vimeo.com/user2935790">chead</a> on <a href="http://vimeo.com">Vimeo</a>.</p></p>
+<p>“Right, so you can&#8217;t win by distracting someone, or because they didn&#8217;t see you stacking three pieces in a row, you have to win by building an inescapable trap, like check-mate.</p>
+
+<p>This new approach instantly changed our engagement with the game. We are probably not the first people to hit upon this strategy (a perfunctory search failed to falsify this notion), but we redoubled our interest in this simple game simply by adding a dimension to it, one which forced us into a different mode of thinking.</p>
+
+<p>This experience got me thinking about games and AI. I had previously implemented an Othello AI for a class at <a href="http://www.cs.siue.edu/" title="cs.siue.edu">SIUE</a>, and had a wonderful time doing it. I spent a week, just tuning the various heuristics.  I improved it to the point that I could almost never beat it myself.</p>
+
+<p>I saw what had to be done, and set about doing it. I began the implementation of a <a href="https://github.com/arrogantrobot/connect_four" title="connect four github repo">connect four AI</a>. I didn&#8217;t know exactly what form it would take, or if it would even be completed. I am enthralled by algorithms and their ability to leverage some bit of truth. A wrench allows its user to bring leverage to bear on a physical task, and so it is with algorithms and the domain of information. We are not shocked by the fact that a person can wring some elements from the earth and form them into a tool that is stronger and more durable than its maker. However, this is much more shocking when it happens with informational tools. My goal for the connect four AI was to build just such a tool.</p>
+
+<p>This task is certainly not new territory. Connect four is a classic example for AI programming exercises everywhere. There&#8217;s even one from precambrian era of interactive web development, <a href="http://www.pomakis.com/c4/online/c4.cgi" title="n in a row">implemented in cgi</a>. I set about this for the joy of seeing it done. What will follow is an account of my implementing the AI and the various projects that have followed from it.</p>
+
+<p>If you are wondering where this is going, like all truly interesting projects in the 21st century, this one leads to <a href="https://github.com/arrogantrobot/connect_four" title="connect four github repo">Github</a>, the <a href="http://www.raspberrypi.org/" title="raspberry pi">Raspberry Pi</a>, being a maker, and composing elements of high complexity to form modules of even higher complexity.</p>
 </div>
 
 
@@ -136,12 +148,12 @@
   
 
 
-<time datetime="2012-09-09T22:54:00-05:00" pubdate data-updated="true">Sep 9<span>th</span>, 2012</time>
+<time datetime="2013-02-14T23:41:00-06:00" pubdate data-updated="true">Feb 14<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/a-life/'>a-life</a>, <a class='category' href='/blog/categories/cellular-automata/'>cellular-automata</a>
+    <a class='category' href='/blog/categories/ai/'>ai</a>, <a class='category' href='/blog/categories/c-/'>c++,</a>, <a class='category' href='/blog/categories/programming-/'>programming,</a>
   
 </span>
 
@@ -150,7 +162,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://archetyp.al/blog/2012/09/09/automatic-mechanical-self-reproduction/" data-via="plantimals" data-counturl="http://archetyp.al/blog/2012/09/09/automatic-mechanical-self-reproduction/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://archetyp.al/blog/2013/02/14/projects-and-hobbies/" data-via="plantimals" data-counturl="http://archetyp.al/blog/2013/02/14/projects-and-hobbies/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -161,10 +173,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/08/19/iterated-prisoners-dilemma/" title="Previous Post: Iterated Prisoner's Dilemma">&laquo; Iterated Prisoner's Dilemma</a>
+        <a class="basic-alignment left" href="/blog/2012/12/02/textruder/" title="Previous Post: Textruder">&laquo; Textruder</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/12/02/textruder/" title="Next Post: Textruder">Textruder &raquo;</a>
       
     </p>
   </footer>
@@ -316,8 +326,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://archetyp.al/blog/2012/09/09/automatic-mechanical-self-reproduction/';
-        var disqus_url = 'http://archetyp.al/blog/2012/09/09/automatic-mechanical-self-reproduction/';
+        var disqus_identifier = 'http://archetyp.al/blog/2013/02/14/projects-and-hobbies/';
+        var disqus_url = 'http://archetyp.al/blog/2013/02/14/projects-and-hobbies/';
         var disqus_script = 'embed.js';
       
     (function () {

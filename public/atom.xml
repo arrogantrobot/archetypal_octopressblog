@@ -4,7 +4,7 @@
   <title><![CDATA[Archetypal]]></title>
   <link href="http://archetyp.al/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2012-12-03T00:04:00-06:00</updated>
+  <updated>2013-02-15T00:51:08-06:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -12,6 +12,37 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[A mental steam shovel]]></title>
+    <link href="http://archetyp.al/blog/2013/02/14/projects-and-hobbies/"/>
+    <updated>2013-02-14T23:41:00-06:00</updated>
+    <id>http://archetyp.al/blog/2013/02/14/projects-and-hobbies</id>
+    <content type="html"><![CDATA[<p>A month ago I was hanging out with my friend <a href="http://excid3.com" title="excid3.com">Chris</a>. We were having our weekly meetup, talking about our approach to our work, recent experiences, and just enjoying our <a href="http://www.thecivillifebrewingcompany.com/TheCivilLife/Welcome.html" title="civil life brewing company">surroundings</a>. I noticed a connect four game sitting in the corner, on a dark wooden ledge. The old, disjoint of additive and subtractive primary colors, blue and yellow plastic version of the game would have done the trick, but this was even better. It was a wooden version of the board. There were two wooden dowels, each half the width of the board, inserted just beneath the bottom row, which held the pieces in the board. When you draw them out, one from each side, the game is reset and the pieces fall to the bottom of the game board.</p>
+
+<p>“I&#8217;m sure there&#8217;s some simple heuristics to this I&#8217;ve long since forgotten.”</p>
+
+<p>“Yeah, I used to play this all the time.”</p>
+
+<p>“What&#8217;s the quickest way to lose&#8230;? Oh right, allow the opponent to get three in a row on the bottom with an open slot to the right and left.”</p>
+
+<p>And on and on we went. We played for almost an hour until we hit upon an improvement.</p>
+
+<p>“Let&#8217;s enact the chess rules around checkmate. You have to call check, and you can&#8217;t move in a way that will cause you to lose the game on the next turn.”</p>
+
+<p>“Right, so you can&#8217;t win by distracting someone, or because they didn&#8217;t see you stacking three pieces in a row, you have to win by building an inescapable trap, like check-mate.</p>
+
+<p>This new approach instantly changed our engagement with the game. We are probably not the first people to hit upon this strategy (a perfunctory search failed to falsify this notion), but we redoubled our interest in this simple game simply by adding a dimension to it, one which forced us into a different mode of thinking.</p>
+
+<p>This experience got me thinking about games and AI. I had previously implemented an Othello AI for a class at <a href="http://www.cs.siue.edu/" title="cs.siue.edu">SIUE</a>, and had a wonderful time doing it. I spent a week, just tuning the various heuristics.  I improved it to the point that I could almost never beat it myself.</p>
+
+<p>I saw what had to be done, and set about doing it. I began the implementation of a <a href="https://github.com/arrogantrobot/connect_four" title="connect four github repo">connect four AI</a>. I didn&#8217;t know exactly what form it would take, or if it would even be completed. I am enthralled by algorithms and their ability to leverage some bit of truth. A wrench allows its user to bring leverage to bear on a physical task, and so it is with algorithms and the domain of information. We are not shocked by the fact that a person can wring some elements from the earth and form them into a tool that is stronger and more durable than its maker. However, this is much more shocking when it happens with informational tools. My goal for the connect four AI was to build just such a tool.</p>
+
+<p>This task is certainly not new territory. Connect four is a classic example for AI programming exercises everywhere. There&#8217;s even one from precambrian era of interactive web development, <a href="http://www.pomakis.com/c4/online/c4.cgi" title="n in a row">implemented in cgi</a>. I set about this for the joy of seeing it done. What will follow is an account of my implementing the AI and the various projects that have followed from it.</p>
+
+<p>If you are wondering where this is going, like all truly interesting projects in the 21st century, this one leads to <a href="https://github.com/arrogantrobot/connect_four" title="connect four github repo">Github</a>, the <a href="http://www.raspberrypi.org/" title="raspberry pi">Raspberry Pi</a>, being a maker, and composing elements of high complexity to form modules of even higher complexity.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Textruder]]></title>
