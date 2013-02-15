@@ -28,7 +28,7 @@ I saw what had to be done, and set about doing it. I began the implementation of
 
 This task is certainly not new territory. Connect four is a classic example for AI programming exercises everywhere. There's even one from the precambrian era of interactive web development, [implemented in cgi][4]. I set about this for the joy of seeing it done. What will follow is an account of my implementing the AI and the various projects that have followed from it.
 
-If you are wondering where this is going, like all truly interesting projects in the 21st century, this one leads to [Github][3], the [Raspberry Pi][5], being a maker, and composing elements of high complexity to form modules of even higher complexity.
+If you are wondering where this is going, like all truly interesting projects in the 21st century, this one leads to [Github][3], the [Raspberry Pi][5], being a maker, and composing elements of high complexity to form modules of even higher complexity. My next post will describe the above linked connect four algorithm in detail. Look for it soon.
 
 [0]: http://excid3.com "excid3.com"
 [1]: http://www.thecivillifebrewingcompany.com/TheCivilLife/Welcome.html "civil life brewing company"
