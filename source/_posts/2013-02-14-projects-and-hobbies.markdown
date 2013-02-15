@@ -18,7 +18,7 @@ And on and on we went. We played for almost an hour until we hit upon an improve
 
 “Let's enact the chess rules around checkmate. You have to call check, and you can't move in a way that will cause you to lose the game on the next turn.”
 
-“Right, so you can't win by distracting someone, or because they didn't see you stacking three pieces in a row, you have to win by building an inescapable trap, like check-mate. 
+“Right, so you can't win by distracting someone, or because they didn't see you stacking three pieces in a row, you have to win by building an inescapable trap, like check-mate." 
 
 This new approach instantly changed our engagement with the game. We are probably not the first people to hit upon this strategy (a perfunctory search failed to falsify this notion), but we redoubled our interest in this simple game simply by adding a dimension to it, one which forced us into a different mode of thinking.
 
@@ -26,7 +26,7 @@ This experience got me thinking about games and AI. I had previously implemented
 
 I saw what had to be done, and set about doing it. I began the implementation of a [connect four AI][3]. I didn't know exactly what form it would take, or if it would even be completed. I am enthralled by algorithms and their ability to leverage some bit of truth. A wrench allows its user to bring leverage to bear on a physical task, and so it is with algorithms and the domain of information. We are not shocked by the fact that a person can wring some elements from the earth and form them into a tool that is stronger and more durable than its maker. However, this is much more shocking when it happens with informational tools. My goal for the connect four AI was to build just such a tool. 
 
-This task is certainly not new territory. Connect four is a classic example for AI programming exercises everywhere. There's even one from precambrian era of interactive web development, [implemented in cgi][4]. I set about this for the joy of seeing it done. What will follow is an account of my implementing the AI and the various projects that have followed from it.
+This task is certainly not new territory. Connect four is a classic example for AI programming exercises everywhere. There's even one from the precambrian era of interactive web development, [implemented in cgi][4]. I set about this for the joy of seeing it done. What will follow is an account of my implementing the AI and the various projects that have followed from it.
 
 If you are wondering where this is going, like all truly interesting projects in the 21st century, this one leads to [Github][3], the [Raspberry Pi][5], being a maker, and composing elements of high complexity to form modules of even higher complexity.
 
