@@ -1,0 +1,22 @@
+{
+  "desktop": {
+    "dashboard": {
+      "url": "https://twitter.com/plantimals",
+      "browser": "chromium"
+    }
+  },
+  "network": {
+    "type": "wireless",
+    "ssid": "flifi",
+    "psk": "49062563"
+  },
+  "video": {
+    "overscan": {
+      "disable": 1,
+      "left": 0,
+      "right": 0,
+      "top": 0,
+      "bottom": 0
+    }
+  }
+}
