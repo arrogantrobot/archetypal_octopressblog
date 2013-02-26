@@ -8,6 +8,8 @@ categories:
 
 I recently decided to re-read a book I had read long ago, in order that I might filter it through the knowledge and experience I've accrued since I first read it. It occurred to me that so much of what I have done in the intervening years has an impact on my understanding of it, that I could scarcely hold a conversation with my past self on the topic. The book in question is [The Selfish Gene] [0] by [Richard Dawkins] [1].
 
+<!-- more -->
+
 Dawkins' main point in the book is his thesis that species are not the salient unit of evolution, nor are individuals. The indivisible atomic unit of evolution, according to Dawkins, is the gene. The term "gene" has taken on a very specific technical meaning, that of a single stretch of DNA which can [transcribed] [2] into [RNA] [3], then [translated] [4] into a protein. However, Dawkins explains that his intent is to refer to the minimum stretch of DNA required to encode a [phenotype] [5]. One of the consequences of Dawkins' view on the topic of evolution is that the biological units we think of as individuals, i.e. a specific instance of a species, are actually vehicles manifested by genes in order to further replicate themselves.
 
 Upon initial inspection, this idea seems obvious. This sense of "obviousness" is how to detect a remarkably good idea. While it may seem obvious, there must have been some individual to point it out to everyone else first, and this case, it was Dawkins. The best analogy I can make is that of Darwinian Evolution. It seems so painfully obvious, yet it took tens of thousands of years, so far as we know, for humans to produce this idea.

@@ -18,6 +18,8 @@ rs11240777  1   798959  GA
 rs6681049   1   800007  CC
 {% endcodeblock %}
 
+<!-- more -->
+
 Rows that begin with a '#' are header rows, of which, there may be as many as you please. 23andme puts some data in here, like which reference the coordinates are based on. This is an interesting topic as the build being used has just recently changed from hg18 to hg19. If you downloaded your raw data before August 9, 2012, you have hg18, after, and you have hg19. However, someone forgot to update the header to reflect this, so it still reads "build36". 
 
 The rsid column is a unique identifier for reference SNP identifier from [dbSNP] [1]. These identifiers were more useful before the completion of the human genome project, as there was no coordinate system capable of resolving the locations of these various SNP's. Now it is possible to address them like you might address a house, with the State or City being analogous to the chromosome and the street address being analogous to the "position". The position is the number of bases from the beginning of the chromosome that a SNP is located at. 

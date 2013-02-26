@@ -8,6 +8,8 @@ categories: [ cellular-automata, generative-art, github ]
 
 [Textruder] [0] is the next installment in a long line of [one-dimensional cellular automata implementations] [1] on various platforms and various media. This adventure begins like so many, on the command line. The inspiration for this project came from reading one of [Stephen Wolfram's papers on cellular automata] [2]. The original output of the programs testing the concepts of cellular automata was not graphical in the sense of directly mapping each cell to a pixel or block of pixels. Instead, they simply used the command line to emulate this behavior, printing out a new line for each iteration of the row of cells, with an "*" character representing the on cells and a space for the off cells.
 
+<!-- more -->
+
 So I set about making a command line version of the one-dimensional cellular automata. After using [cmake] [3] extensively for my day job, I found it to be an excellent tool for organizing C++ projects. So this project is built in cmake.
 
 This project began simply as a command line cellular automaton and grew to become something a little bigger. It is now a program which will "extrude" any ascii printable text through the pattern of a one-dimensional cellular automaton. So instead of simply printing out a "*" character each time an "on" cell was encountered, I decided to print the next character of the specified source material. Textruder accepts both ascii text files and standard in.

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: javascript | Archetypal]]></title>
   <link href="http://archetyp.al/blog/categories/javascript/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2013-02-20T18:10:28-06:00</updated>
+  <updated>2013-02-26T00:21:21-06:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -36,6 +36,9 @@
 </span><span class='line'>
 </span><span class='line'><span class="nt">&lt;p&gt;</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<!-- more -->
+
 
 <p>Then create an instance of cae:</p>
 

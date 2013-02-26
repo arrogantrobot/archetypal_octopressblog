@@ -14,6 +14,8 @@ First, include the cae.js source in your html:
 <script src="/javascripts/cae.js"></script>
 {% endcodeblock %}
 
+<!-- more -->
+
 Then create an instance of cae:
 
 {% codeblock create a new cae object and start it lang:javascript %}

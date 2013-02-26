@@ -4,7 +4,7 @@
   <title><![CDATA[Archetypal]]></title>
   <link href="http://archetyp.al/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2013-02-20T18:10:28-06:00</updated>
+  <updated>2013-02-26T00:21:21-06:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -21,6 +21,9 @@
     <content type="html"><![CDATA[<p>A month ago I was hanging out with my friend <a href="http://excid3.com" title="excid3.com">Chris</a>. We were having our weekly meetup, talking about our approach to our work, recent experiences, and just enjoying our <a href="http://www.thecivillifebrewingcompany.com/TheCivilLife/Welcome.html" title="civil life brewing company">surroundings</a>. I noticed a connect four game sitting in the corner, on a dark wooden ledge. The old, disjoint of additive and subtractive primary colors, blue and yellow plastic version of the game would have done the trick, but this was even better. It was a wooden version of the board. There were two wooden dowels, each half the width of the board, inserted just beneath the bottom row, which held the pieces in the board. When you draw them out, one from each side, the game is reset and the pieces fall to the bottom of the game board.</p>
 
 <p>“I&#8217;m sure there&#8217;s some simple heuristics to this I&#8217;ve long since forgotten.”</p>
+
+<!-- more -->
+
 
 <p>“Yeah, I used to play this all the time.”</p>
 
@@ -50,6 +53,9 @@
     <updated>2012-12-02T20:04:00-06:00</updated>
     <id>http://archetyp.al/blog/2012/12/02/textruder</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/arrogantrobot/textruder" title="textruder github">Textruder</a> is the next installment in a long line of <a href="http://archetyp.al/cellular-automata-rule-explorer" title="cellular automata rule explorer">one-dimensional cellular automata implementations</a> on various platforms and various media. This adventure begins like so many, on the command line. The inspiration for this project came from reading one of <a href="http://www.stephenwolfram.com/publications/articles/ca/83-cellular/" title="wolfram 1983">Stephen Wolfram&#8217;s papers on cellular automata</a>. The original output of the programs testing the concepts of cellular automata was not graphical in the sense of directly mapping each cell to a pixel or block of pixels. Instead, they simply used the command line to emulate this behavior, printing out a new line for each iteration of the row of cells, with an &#8220;*&#8221; character representing the on cells and a space for the off cells.</p>
+
+<!-- more -->
+
 
 <p>So I set about making a command line version of the one-dimensional cellular automata. After using <a href="http://www.cmake.org/" title="cmake website">cmake</a> extensively for my day job, I found it to be an excellent tool for organizing C++ projects. So this project is built in cmake.</p>
 
@@ -93,6 +99,11 @@
     <id>http://archetyp.al/blog/2012/09/09/automatic-mechanical-self-reproduction</id>
     <content type="html"><![CDATA[<p>While reading <a href="http://www.amazon.com/gp/product/0679743898/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0679743898&amp;linkCode=as2&amp;tag=archetypal-20" title="Artificial Life">Artificial Life: A Report From the Frontier Where Computers Meet Biology</a> by Steven Levy, I came across a reference to self-reproducing structures built by <a href="http://en.wikipedia.org/wiki/Lionel_Penrose" title="Lionel Penrose">Lionel</a> and <a href="http://en.wikipedia.org/wiki/Roger_Penrose" title="Roger Penrose">Roger Penrose</a>. These structures were small plywood cutouts fitted with various shapes and levers which allowed them to link up, or not, when coming into contact with another block of the same make. See the following two part short film about this project:</p>
 
+<!-- more -->
+
+
+
+
 <iframe src="http://player.vimeo.com/video/10297756" width="500" height="375" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 
@@ -111,6 +122,9 @@
     <updated>2012-08-19T17:55:00-05:00</updated>
     <id>http://archetyp.al/blog/2012/08/19/iterated-prisoners-dilemma</id>
     <content type="html"><![CDATA[<p>I recently decided to re-read a book I had read long ago, in order that I might filter it through the knowledge and experience I&#8217;ve accrued since I first read it. It occurred to me that so much of what I have done in the intervening years has an impact on my understanding of it, that I could scarcely hold a conversation with my past self on the topic. The book in question is <a href="http://www.amazon.com/gp/product/B000SEHIG2/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B000SEHIG2&amp;linkCode=as2&amp;tag=archetypal-20" title="The Selfish Gene, by Richard Dawkins">The Selfish Gene</a> by <a href="http://en.wikipedia.org/wiki/Richard_Dawkins" title="Richard Dawkins">Richard Dawkins</a>.</p>
+
+<!-- more -->
+
 
 <p>Dawkins&#8217; main point in the book is his thesis that species are not the salient unit of evolution, nor are individuals. The indivisible atomic unit of evolution, according to Dawkins, is the gene. The term &#8220;gene&#8221; has taken on a very specific technical meaning, that of a single stretch of DNA which can <a href="http://en.wikipedia.org/wiki/Transcription_(genetics)" title="transcription">transcribed</a> into <a href="http://en.wikipedia.org/wiki/Transcription_(genetics)" title="RNA">RNA</a>, then <a href="http://en.wikipedia.org/wiki/Translation_(biology)" title="translation">translated</a> into a protein. However, Dawkins explains that his intent is to refer to the minimum stretch of DNA required to encode a <a href="http://en.wikipedia.org/wiki/Phenotype" title="phenotype">phenotype</a>. One of the consequences of Dawkins&#8217; view on the topic of evolution is that the biological units we think of as individuals, i.e. a specific instance of a species, are actually vehicles manifested by genes in order to further replicate themselves.</p>
 
@@ -186,6 +200,11 @@
 </span><span class='line'>rs6681049   1   800007  CC</span></code></pre></td></tr></table></div></figure>
 
 
+
+
+<!-- more -->
+
+
 <p>Rows that begin with a &#8216;#&#8217; are header rows, of which, there may be as many as you please. 23andme puts some data in here, like which reference the coordinates are based on. This is an interesting topic as the build being used has just recently changed from hg18 to hg19. If you downloaded your raw data before August 9, 2012, you have hg18, after, and you have hg19. However, someone forgot to update the header to reflect this, so it still reads &#8220;build36&#8221;.</p>
 
 <p>The rsid column is a unique identifier for reference SNP identifier from <a href="http://www.ncbi.nlm.nih.gov/SNP/get_html.cgi?whichHtml=how_to_submit#REFSNP" title="dbSNP">dbSNP</a>. These identifiers were more useful before the completion of the human genome project, as there was no coordinate system capable of resolving the locations of these various SNP&#8217;s. Now it is possible to address them like you might address a house, with the State or City being analogous to the chromosome and the street address being analogous to the &#8220;position&#8221;. The position is the number of bases from the beginning of the chromosome that a SNP is located at.</p>
@@ -223,6 +242,11 @@
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class='html'><span class='line'><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;/javascripts/cae.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!-- more -->
 
 
 <p>Then create an instance of cae:</p>

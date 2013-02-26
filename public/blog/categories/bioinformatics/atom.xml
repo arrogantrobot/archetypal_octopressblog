@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bioinformatics | Archetypal]]></title>
   <link href="http://archetyp.al/blog/categories/bioinformatics/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2013-02-20T18:10:28-06:00</updated>
+  <updated>2013-02-26T00:21:21-06:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -40,6 +40,9 @@
 </span><span class='line'>rs12124819  1   776546  AC
 </span><span class='line'>rs11240777  1   798959  GA
 </span><span class='line'>rs6681049   1   800007  CC</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<!-- more -->
+
 
 <p>Rows that begin with a '#' are header rows, of which, there may be as many as you please. 23andme puts some data in here, like which reference the coordinates are based on. This is an interesting topic as the build being used has just recently changed from hg18 to hg19. If you downloaded your raw data before August 9, 2012, you have hg18, after, and you have hg19. However, someone forgot to update the header to reflect this, so it still reads "build36".</p>
 

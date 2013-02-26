@@ -122,27 +122,12 @@
 
 <p>“I&#8217;m sure there&#8217;s some simple heuristics to this I&#8217;ve long since forgotten.”</p>
 
-<p>“Yeah, I used to play this all the time.”</p>
-
-<p>“What&#8217;s the quickest way to lose&#8230;? Oh right, allow the opponent to get three in a row on the bottom with an open slot to the right and left.”</p>
-
-<p>And on and on we went. We played for almost an hour until we hit upon an improvement.</p>
-
-<p>“Let&#8217;s enact the chess rules around checkmate. You have to call check, and you can&#8217;t move in a way that will cause you to lose the game on the next turn.”</p>
-
-<p>“Right, so you can&#8217;t win by distracting someone, or because they didn&#8217;t see you stacking three pieces in a row, you have to win by building an inescapable trap, like check-mate.&#8221;</p>
-
-<p>This new approach instantly changed our engagement with the game. We are probably not the first people to hit upon this strategy (a perfunctory search failed to falsify this notion), but we redoubled our interest in this simple game simply by adding a dimension to it, one which forced us into a different mode of thinking.</p>
-
-<p>This experience got me thinking about games and AI. I had previously implemented an Othello AI for a class at <a href="http://www.cs.siue.edu/" title="cs.siue.edu">SIUE</a>, and had a wonderful time doing it. I spent a week, just tuning the various heuristics.  I improved it to the point that I could almost never beat it myself.</p>
-
-<p>I saw what had to be done, and set about doing it. I began the implementation of a <a href="https://github.com/arrogantrobot/connect_four" title="connect four github repo">connect four AI</a>. I didn&#8217;t know exactly what form it would take, or if it would even be completed. I am enthralled by algorithms and their ability to leverage some bit of truth. A wrench allows its user to bring leverage to bear on a physical task, and so it is with algorithms and the domain of information. We are not shocked by the fact that a person can wring some elements from the earth and form them into a tool that is stronger and more durable than its maker. However, this is much more shocking when it happens with informational tools. My goal for the connect four AI was to build just such a tool.</p>
-
-<p>This task is certainly not new territory. Connect four is a classic example for AI programming exercises everywhere. There&#8217;s even one from the precambrian era of interactive web development, <a href="http://www.pomakis.com/c4/online/c4.cgi" title="n in a row">implemented in cgi</a>. I set about this for the joy of seeing it done. What will follow is an account of my implementing the AI and the various projects that have followed from it.</p>
-
-<p>If you are wondering where this is going, like all truly interesting projects in the 21st century, this one leads to <a href="https://github.com/arrogantrobot/connect_four" title="connect four github repo">Github</a>, the <a href="http://www.raspberrypi.org/" title="raspberry pi">Raspberry Pi</a>, being a maker, and composing elements of high complexity to form modules of even higher complexity. My next post will describe the above linked connect four algorithm in detail. Look for it soon.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/14/a-mental-steam-shovel/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -178,40 +163,12 @@
 
   <div class="entry-content"><p><a href="https://github.com/arrogantrobot/textruder" title="textruder github">Textruder</a> is the next installment in a long line of <a href="http://archetyp.al/cellular-automata-rule-explorer" title="cellular automata rule explorer">one-dimensional cellular automata implementations</a> on various platforms and various media. This adventure begins like so many, on the command line. The inspiration for this project came from reading one of <a href="http://www.stephenwolfram.com/publications/articles/ca/83-cellular/" title="wolfram 1983">Stephen Wolfram&#8217;s papers on cellular automata</a>. The original output of the programs testing the concepts of cellular automata was not graphical in the sense of directly mapping each cell to a pixel or block of pixels. Instead, they simply used the command line to emulate this behavior, printing out a new line for each iteration of the row of cells, with an &#8220;*&#8221; character representing the on cells and a space for the off cells.</p>
 
-<p>So I set about making a command line version of the one-dimensional cellular automata. After using <a href="http://www.cmake.org/" title="cmake website">cmake</a> extensively for my day job, I found it to be an excellent tool for organizing C++ projects. So this project is built in cmake.</p>
-
-<p>This project began simply as a command line cellular automaton and grew to become something a little bigger. It is now a program which will &#8220;extrude&#8221; any ascii printable text through the pattern of a one-dimensional cellular automaton. So instead of simply printing out a &#8220;*&#8221; character each time an &#8220;on&#8221; cell was encountered, I decided to print the next character of the specified source material. Textruder accepts both ascii text files and standard in.</p>
-
-<p>This causes the source material to be extruded through the pattern of the cellular automaton. I have used the same method applied in my android live wallpaper <a href="https://play.google.com/store/apps/details?id=com.farawaylabs.android.emergentwallpaper" title="Emergent Wallpaper">Emergent Wallpaper</a> of randomly picking from a short list of interesting rules and allowing that rule to play out for a random interval before randomly selecting a rule from the list again and changing to it. This results in a continuous stream of non-repeating patterns without the need for human intervention. So the user of Textruder need only run the app and provide input, and the rest will happen automatically.</p>
-
-<p>Navigate to <a href="http://archetyp.al/assets/textruder_demo.txt" title="textruder demo">this text file</a> to see a small example output text.</p>
-
-<p>In order to run this yourself, you&#8217;ll need to build textruder. This requires that you have cmake.</p>
-
-<figure class='code'><figcaption><span>Compile and run Textruder </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git@github.com:arrogantrobot/textruder.git
-</span><span class='line'>
-</span><span class='line'>cd textruder
-</span><span class='line'>
-</span><span class='line'>cmake .
-</span><span class='line'>
-</span><span class='line'>make
-</span><span class='line'>
-</span><span class='line'>yes | ./textruder</span></code></pre></td></tr></table></div></figure>
-
-
-
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/12/02/textruder/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -247,17 +204,12 @@
 
   <div class="entry-content"><p>While reading <a href="http://www.amazon.com/gp/product/0679743898/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=0679743898&amp;linkCode=as2&amp;tag=archetypal-20" title="Artificial Life">Artificial Life: A Report From the Frontier Where Computers Meet Biology</a> by Steven Levy, I came across a reference to self-reproducing structures built by <a href="http://en.wikipedia.org/wiki/Lionel_Penrose" title="Lionel Penrose">Lionel</a> and <a href="http://en.wikipedia.org/wiki/Roger_Penrose" title="Roger Penrose">Roger Penrose</a>. These structures were small plywood cutouts fitted with various shapes and levers which allowed them to link up, or not, when coming into contact with another block of the same make. See the following two part short film about this project:</p>
 
-<iframe src="http://player.vimeo.com/video/10297756" width="500" height="375" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
-
-<p> <p><a href="http://vimeo.com/10297756">Automatic Mechanical Self Replication (part 1)</a> from <a href="http://vimeo.com/user2935790">chead</a> on <a href="http://vimeo.com">Vimeo</a>.</p></p>
-
-<iframe src="http://player.vimeo.com/video/10298933" width="500" height="375" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
-
-<p> <p><a href="http://vimeo.com/10298933">Automatic Mechanical Self Replication (part 2)</a> from <a href="http://vimeo.com/user2935790">chead</a> on <a href="http://vimeo.com">Vimeo</a>.</p></p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/09/09/automatic-mechanical-self-reproduction/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -293,56 +245,12 @@
 
   <div class="entry-content"><p>I recently decided to re-read a book I had read long ago, in order that I might filter it through the knowledge and experience I&#8217;ve accrued since I first read it. It occurred to me that so much of what I have done in the intervening years has an impact on my understanding of it, that I could scarcely hold a conversation with my past self on the topic. The book in question is <a href="http://www.amazon.com/gp/product/B000SEHIG2/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B000SEHIG2&amp;linkCode=as2&amp;tag=archetypal-20" title="The Selfish Gene, by Richard Dawkins">The Selfish Gene</a> by <a href="http://en.wikipedia.org/wiki/Richard_Dawkins" title="Richard Dawkins">Richard Dawkins</a>.</p>
 
-<p>Dawkins&#8217; main point in the book is his thesis that species are not the salient unit of evolution, nor are individuals. The indivisible atomic unit of evolution, according to Dawkins, is the gene. The term &#8220;gene&#8221; has taken on a very specific technical meaning, that of a single stretch of DNA which can <a href="http://en.wikipedia.org/wiki/Transcription_(genetics)" title="transcription">transcribed</a> into <a href="http://en.wikipedia.org/wiki/Transcription_(genetics)" title="RNA">RNA</a>, then <a href="http://en.wikipedia.org/wiki/Translation_(biology)" title="translation">translated</a> into a protein. However, Dawkins explains that his intent is to refer to the minimum stretch of DNA required to encode a <a href="http://en.wikipedia.org/wiki/Phenotype" title="phenotype">phenotype</a>. One of the consequences of Dawkins&#8217; view on the topic of evolution is that the biological units we think of as individuals, i.e. a specific instance of a species, are actually vehicles manifested by genes in order to further replicate themselves.</p>
-
-<p>Upon initial inspection, this idea seems obvious. This sense of &#8220;obviousness&#8221; is how to detect a remarkably good idea. While it may seem obvious, there must have been some individual to point it out to everyone else first, and this case, it was Dawkins. The best analogy I can make is that of Darwinian Evolution. It seems so painfully obvious, yet it took tens of thousands of years, so far as we know, for humans to produce this idea.</p>
-
-<p>Indeed, as I read The Selfish Gene once more, I found myself totally engrossed in it. Each chapter is well constructed as an efficient implement to ram home the message of its author. One chapter in particular caught my attention this time around: &#8220;Nice Guys Finish First&#8221;. This is the chapter in which some of the game-theoretic ideas behind the Selfish Gene theory are elucidated via the example of <a href="http://en.wikipedia.org/wiki/Prisoner%27s_dilemma#The_iterated_prisoners.27_dilemma" title="Iterated Prisoner's Dilemma">Iterated Prisoner&#8217;s Dilemma</a>.</p>
-
-<p>The singleton version, simply Prisoner&#8217;s Dilemma, is a <a href="http://en.wikipedia.org/wiki/Symmetric_game#Symmetry_in_2x2_games" title="2x2 games">2x2 game</a>, where there are only two players, with each player simultaneously playing one of two strategies. In this case, the two available strategies are cooperation and defection. If both players cooperate, they both receive a reward, 3 points. If one player chooses cooperation and one chooses defection, the cooperator receives zero points and the defector receives 5 points. If both defect, both players receive 1 point. So in the singleton version of the game, the rational actor with always choose defection. However, if the game is played multiple times between the same two players, a channel of communication is opened which can allow coordination, along with deception. If both players cooperate, the highest total points will be generated, as <em>3 + 3 > 5 + 0</em>.</p>
-
-<p>The discussion of the various strategies goes on at length in <a href="http://www.amazon.com/gp/product/B000SEHIG2/ref=as_li_ss_tl?ie=UTF8&amp;camp=1789&amp;creative=390957&amp;creativeASIN=B000SEHIG2&amp;linkCode=as2&amp;tag=archetypal-20" title="The Selfish Gene, by Richard Dawkins">The Selfish Gene</a>, and is recapped somewhat in a very interesting <a href="http://www.radiolab.org/blogs/radiolab-blogland/2010/dec/14/prisoners-dilemma/" title="radiolab">episode of Radiolab</a>. I was inspired by the discussion to implement my own instance of <a href="https://github.com/arrogantrobot/iterated-prisoners-dilemma" title="ipd">iterated prisoner&#8217;s dilemma in java</a>.</p>
-
-<p>I am still in the early phases of this development. I have roughed in the classes for players and made two example strategies. One is the &#8220;Random&#8221; strategy which simply flips a coin each time and goes with that. I also implemented a widely discussed strategy called &#8220;Tit for Tat&#8221; which starts out cooperating, but will mirror the other player&#8217;s last play after the first. So if two T.F.T players meet, they will sail through, cooperating the whole way. If you would like to add a strategy, please do so! Here is my Tit for Tat implementation:</p>
-
-<figure class='code'><figcaption><span>Tit for Tat Strategy </span><a href='http://github.com/arrogantrobot/iterated-prisoners-dilemma/blob/master/iterated-prisoners-dilemma/src/main/java/com/farawaylabs/ipd/TitForTat.java'>TitForTat.java </a></figcaption> <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">farawaylabs</span><span class="o">.</span><span class="na">ipd</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">class</span> <span class="nc">TitForTat</span> <span class="kd">extends</span> <span class="n">Player</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">private</span> <span class="kt">boolean</span> <span class="n">lastPlay</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">public</span> <span class="nf">TitForTat</span><span class="o">()</span> <span class="o">{}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nd">@Override</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">getPlay</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">lastPlay</span><span class="o">;}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="nd">@Override</span>
-</span><span class='line'>    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">result</span><span class="o">(</span><span class="kt">boolean</span> <span class="n">result</span><span class="o">)</span> <span class="o">{</span><span class="k">this</span><span class="o">.</span><span class="na">lastPlay</span> <span class="o">=</span> <span class="n">result</span><span class="o">;}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kd">public</span> <span class="n">String</span> <span class="nf">getPlayerName</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="s">&quot;TitForTat&quot;</span><span class="o">;}</span>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The <em>getPlay()</em> method returns a boolean, with <em>true</em> being cooperation and <em>false</em> being defection. The <em>result()</em> method gets called after each round, feeding the other player&#8217;s choice back to the agent, just in case it needs to do something with this, as Tit for Tat does. The <em>getPlayerName()</em> returns a string naming the strategy.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/08/19/iterated-prisoners-dilemma/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -394,29 +302,14 @@
 </span><span class='line'>rs6681049   1   800007  CC</span></code></pre></td></tr></table></div></figure>
 
 
-<p>Rows that begin with a &#8216;#&#8217; are header rows, of which, there may be as many as you please. 23andme puts some data in here, like which reference the coordinates are based on. This is an interesting topic as the build being used has just recently changed from hg18 to hg19. If you downloaded your raw data before August 9, 2012, you have hg18, after, and you have hg19. However, someone forgot to update the header to reflect this, so it still reads &#8220;build36&#8221;.</p>
-
-<p>The rsid column is a unique identifier for reference SNP identifier from <a href="http://www.ncbi.nlm.nih.gov/SNP/get_html.cgi?whichHtml=how_to_submit#REFSNP" title="dbSNP">dbSNP</a>. These identifiers were more useful before the completion of the human genome project, as there was no coordinate system capable of resolving the locations of these various SNP&#8217;s. Now it is possible to address them like you might address a house, with the State or City being analogous to the chromosome and the street address being analogous to the &#8220;position&#8221;. The position is the number of bases from the beginning of the chromosome that a SNP is located at.</p>
-
-<p>The final column is the genotype at the listed address. There are two bases listed because humans have two copies of each chromosome.</p>
-
-<h2>VCF Format</h2>
-
-<p>So this leaves us with a list of addresses. This is well and good, but many bioinformatics applications use a different format, not all that different, called the <a href="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41" title="VCF format">&#8220;Variant Call Format&#8221;</a>. Specifically, a tool for predicting the biological effects of mutations (bases different than the reference bases), uses the VCF format. It is <a href="http://snpeff.sourceforge.net/" title="snpEff">snpEff</a>, or SNP effect predictor.</p>
-
-<p>In order to facilitate the use of the various and sundry tools that use the VCF format, I have made a tool for converting the 23andme raw format to VCF. It is the <a href="https://github.com/arrogantrobot/23andme2vcf" title="23andme2vcf converter">23andme2vcf converter</a>. In order to use it, follow these steps:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/arrogantrobot/23andme2vcf.git
-</span><span class='line'>cd 23andme2vcf
-</span><span class='line'>perl 23andme2vcf.pl /path/to/23andme/raw/data.zip /desired/path/to/output.vcf</span></code></pre></td></tr></table></div></figure>
 
 
-<p>If you do not use git, you may download the tarball from <a href="https://github.com/arrogantrobot/23andme2vcf/tarball/master" title="23andme2vcf converter tarball">github</a>, unpack it, and run line 3 of the above commands.</p>
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format/">Read on &rarr;</a>
+    </footer>
   
 
 
@@ -460,70 +353,14 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-<p>Then create an instance of cae:</p>
-
-<figure class='code'><figcaption><span>create a new cae object and start it  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">my_cae</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">cae</span><span class="p">();</span>
-</span><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="s2">&quot;my_canvas&quot;</span><span class="p">);</span>
-</span><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">draw</span><span class="p">();</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And that&#8217;s it. Just replace &#8220;my_canvas&#8221; with the id of the canvas you&#8217;d like cae to draw upon, and it will determine the proper width and height. There are a few more moving pieces to fiddle with if you like.</p>
-
-<p>First, frames per second:</p>
-
-<figure class='code'><figcaption><span>frames per second  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">setFramesPerSecond</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Depending upon your processor and browser, your outcome will vary greatly.</p>
-
-<p>You can also set the number of pixels per cell:</p>
-
-<figure class='code'><figcaption><span>pixels per cell  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='javascript'><span class='line'><span class="nx">my_cae</span><span class="p">.</span><span class="nx">setPixelsPerCell</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>The lower limit for pixels per cell is 1, with the upper limit being the min of the width and height of your canvas. Though one cell is going to make for a pretty boring display. Actually, now that I think of it, this would cause the cell to be its own neighbor&#8230;</p>
-
-<p><canvas id="my_canvas" width="100" height="100"></canvas></p>
-
-<script src="/javascripts/cae.js"></script>
-
-
-<script type="text/javascript">
-    my_cae = new cae();
-    my_cae.setPixelsPerCell(100);
-    my_cae.init("my_canvas");
-    my_cae.draw();
-</script>
-
-
-<p>I admit, it&#8217;s not very exciting. I think I just invented the zero-dimensional cellular automata.</p>
-
-<p>Now to something much more exciting:</p>
-
-<p><canvas id="my_other_canvas" width="300" height="700"></canvas></p>
-
-<script type="text/javascript">
-    my_other_cae = new cae();
-    my_other_cae.setPixelsPerCell(5);
-    my_other_cae.init("my_other_canvas");
-    my_other_cae.draw();
-</script>
-
 
 
 </div>
   
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/">Read on &rarr;</a>
+    </footer>
   
 
 

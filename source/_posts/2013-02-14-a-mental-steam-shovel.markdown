@@ -10,6 +10,8 @@ A month ago I was hanging out with my friend [Chris][0]. We were having our week
 
 “I'm sure there's some simple heuristics to this I've long since forgotten.”
 
+<!-- more -->
+
 “Yeah, I used to play this all the time.”
 
 “What's the quickest way to lose...? Oh right, allow the opponent to get three in a row on the bottom with an open slot to the right and left.”

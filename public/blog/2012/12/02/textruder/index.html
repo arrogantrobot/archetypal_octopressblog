@@ -117,6 +117,9 @@
 
 <div class="entry-content"><p><a href="https://github.com/arrogantrobot/textruder" title="textruder github">Textruder</a> is the next installment in a long line of <a href="http://archetyp.al/cellular-automata-rule-explorer" title="cellular automata rule explorer">one-dimensional cellular automata implementations</a> on various platforms and various media. This adventure begins like so many, on the command line. The inspiration for this project came from reading one of <a href="http://www.stephenwolfram.com/publications/articles/ca/83-cellular/" title="wolfram 1983">Stephen Wolfram&#8217;s papers on cellular automata</a>. The original output of the programs testing the concepts of cellular automata was not graphical in the sense of directly mapping each cell to a pixel or block of pixels. Instead, they simply used the command line to emulate this behavior, printing out a new line for each iteration of the row of cells, with an &#8220;*&#8221; character representing the on cells and a space for the off cells.</p>
 
+<!-- more -->
+
+
 <p>So I set about making a command line version of the one-dimensional cellular automata. After using <a href="http://www.cmake.org/" title="cmake website">cmake</a> extensively for my day job, I found it to be an excellent tool for organizing C++ projects. So this project is built in cmake.</p>
 
 <p>This project began simply as a command line cellular automaton and grew to become something a little bigger. It is now a program which will &#8220;extrude&#8221; any ascii printable text through the pattern of a one-dimensional cellular automaton. So instead of simply printing out a &#8220;*&#8221; character each time an &#8220;on&#8221; cell was encountered, I decided to print the next character of the specified source material. Textruder accepts both ascii text files and standard in.</p>

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: github | Archetypal]]></title>
   <link href="http://archetyp.al/blog/categories/github/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2013-02-20T18:10:28-06:00</updated>
+  <updated>2013-02-26T00:21:21-06:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -19,6 +19,9 @@
     <updated>2012-12-02T20:04:00-06:00</updated>
     <id>http://archetyp.al/blog/2012/12/02/textruder</id>
     <content type="html"><![CDATA[<p><a href="https://github.com/arrogantrobot/textruder" title="textruder github">Textruder</a> is the next installment in a long line of <a href="http://archetyp.al/cellular-automata-rule-explorer" title="cellular automata rule explorer">one-dimensional cellular automata implementations</a> on various platforms and various media. This adventure begins like so many, on the command line. The inspiration for this project came from reading one of <a href="http://www.stephenwolfram.com/publications/articles/ca/83-cellular/" title="wolfram 1983">Stephen Wolfram's papers on cellular automata</a>. The original output of the programs testing the concepts of cellular automata was not graphical in the sense of directly mapping each cell to a pixel or block of pixels. Instead, they simply used the command line to emulate this behavior, printing out a new line for each iteration of the row of cells, with an "*" character representing the on cells and a space for the off cells.</p>
+
+<!-- more -->
+
 
 <p>So I set about making a command line version of the one-dimensional cellular automata. After using <a href="http://www.cmake.org/" title="cmake website">cmake</a> extensively for my day job, I found it to be an excellent tool for organizing C++ projects. So this project is built in cmake.</p>
 
@@ -87,6 +90,9 @@
 </span><span class='line'>rs12124819  1   776546  AC
 </span><span class='line'>rs11240777  1   798959  GA
 </span><span class='line'>rs6681049   1   800007  CC</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<!-- more -->
+
 
 <p>Rows that begin with a '#' are header rows, of which, there may be as many as you please. 23andme puts some data in here, like which reference the coordinates are based on. This is an interesting topic as the build being used has just recently changed from hg18 to hg19. If you downloaded your raw data before August 9, 2012, you have hg18, after, and you have hg19. However, someone forgot to update the header to reflect this, so it still reads "build36".</p>
 
