@@ -9,7 +9,7 @@
   <meta name="author" content="Rob Long">
 
   
-  <meta name="description" content="A month ago I was hanging out with my friend Chris. We were having our weekly meetup, talking about our approach to our work, recent experiences, and &hellip;">
+  <meta name="description" content="In the first article of this series, I introduced the four in a row game concept and linked to my code for an AI to play it. I will now set about &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -89,6 +89,49 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/02/24/a-mental-steam-shovel-part-two-the-algorithm/">A Mental Steam Shovel Part Two: The Algorithm</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-24T22:56:00-06:00" pubdate data-updated="true">Feb 24<span>th</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In the <a href="http://archetyp.al/blog/2013/02/14/a-mental-steam-shovel/" title="A Mental Steam Shovel">first article</a> of this series, I introduced the four in a row game concept and linked to my code for an AI to play it. I will now set about explaining how I did this.</p>
+
+<p>Algorithms make/help make an increasing number of decisions. How to get from <a href="http://en.wikipedia.org/wiki/Shortest_path_problem" title="shortest path">one place to another</a>, who to <a href="http://blog.ted.com/2013/02/13/a-look-at-okcupids-algorithm-getting-personal-with-ted-ed-for-valentines-day/" title="okcupid algorithm">go on a date</a> with, which <a href="http://en.wikipedia.org/wiki/Netflix_Prize" title="netflix">movie to watch</a> next, even the rapid on/off patterns of <a href="http://www.docstoc.com/docs/47562161/Fuzzy-Logic-and-Anti-Lock-Braking-Systems" title="anti-lock brakes">anti-lock brakes</a>.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2013/02/24/a-mental-steam-shovel-part-two-the-algorithm/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -455,6 +498,10 @@
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2013/02/24/a-mental-steam-shovel-part-two-the-algorithm/">A mental steam shovel part two: the algorithm</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2013/02/14/a-mental-steam-shovel/">A mental steam shovel</a>
       </li>
     
@@ -470,102 +517,8 @@
         <a href="/blog/2012/08/19/iterated-prisoners-dilemma/">Iterated Prisoner&#8217;s Dilemma</a>
       </li>
     
-      <li class="post">
-        <a href="/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format/">Convert your 23andme raw data into VCF format</a>
-      </li>
-    
   </ul>
 </section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/arrogantrobot">@arrogantrobot</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'arrogantrobot',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-<section>
-    <h1>Profile</h1>
-    <p><a href="http://www.linkedin.com/in/robertlouislong">LinkedIn</a></p>
-</section>
-
-<section>
-  <h1>Coderwall Badges</h1>
-  <p>
-    <script type="text/javascript">
-      function display_coderwall(args) {
-        var badges = args["data"]["badges"];
-        var wall = '';
-        for ( var i = 0; i < badges.length; i++ ) {
-          var alt_txt = badges[i]["name"];
-          var title_txt = badges[i]["name"] + ' - ' + badges[i]["description"];
-          wall += '<a href="http://coderwall.com/arrogantrobot/"><img src="'
-            + badges[i]["badge"]
-            + '" width="48" height="48" alt="' + alt_txt
-            + '" title="' + title_txt
-            + '"/></a>';
-        }
-        document.write(wall);
-      }
-    </script>
-    <script src="http://coderwall.com/arrogantrobot.json?callback=display_coderwall"></script>
-  </p>
-  
-  <p><a href="http://coderwall.com/arrogantrobot"><img src="http://api.coderwall.com/arrogantrobot/endorsecount.png" /></a></p>
-  
-</section>
-
-
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("plantimals", 5, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/plantimals" class="twitter-follow-button" data-show-count="false">Follow @plantimals</a>
-  
-</section>
-
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/101227287862486245764?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
 
   
 </aside>
