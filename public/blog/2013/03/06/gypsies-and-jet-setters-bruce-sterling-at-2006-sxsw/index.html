@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Convert your 23andme raw data into VCF format - Archetypal</title>
+  <title>Gypsies and Jet-setters: Bruce Sterling at 2006 SXSW - Archetypal</title>
   <meta name="author" content="Rob Long">
 
   
-  <meta name="description" content="A week ago I received my results from 23andme.com. Aside from the obvious points of interest, health risks, heritage, neanderthal composition, etc., &hellip;">
+  <meta name="description" content="This is the first Bruce Sterling talk that I encountered. Now I&#8217;m an inveterate Sterlingite, but at the time, 2006, I had only barely crossed &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://archetyp.al/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format/">
+  <link rel="canonical" href="http://archetyp.al/blog/2013/03/06/gypsies-and-jet-setters-bruce-sterling-at-2006-sxsw/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -92,7 +92,7 @@
   
   <header>
     
-      <h1 class="entry-title">Convert Your 23andme Raw Data Into VCF Format</h1>
+      <h1 class="entry-title">Gypsies and Jet-setters: Bruce Sterling at 2006 SXSW</h1>
     
     
       <p class="meta">
@@ -108,57 +108,68 @@
   
 
 
-<time datetime="2012-08-13T18:36:00-05:00" pubdate data-updated="true">Aug 13<span>th</span>, 2012</time>
+<time datetime="2013-03-06T00:04:00-06:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>A week ago I received my results from <a href="http://www.23andme.com" title="23andme.com">23andme.com</a>. Aside from the obvious points of interest, health risks, heritage, neanderthal composition, etc., I was also interested in getting my own data in raw format. While 23andme does provide a way to download your &#8220;raw&#8221; data, they are not really providing raw data. One cannot access the image data from the microarray sequencer that they used. What they do provide is formatted as follows:</p>
+<div class="entry-content"><p>This is the first Bruce Sterling talk that I encountered. Now I&#8217;m an inveterate Sterlingite, but at the time, 2006, I had only barely crossed intellectual paths with Sterling. I downloaded it with some long dead, precambrian cousin of google reader that lived in the swamps and estuaries of windows computers and survived by allowing the user to view RSS feeds on his desktop. Then pushed it to my equally antediluvian, single purpose device, an Archos mp3 player. I listened to this talk many times before the Archos died off. I thought this audio was lost to the bit bucket of history, until one day&#8230; <a href="http://archive.org/" title="archive dot org">archive.org</a>. These people are the new Library of Alexandria, with podcasts instead of papyrus.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'># rsid  chromosome  position    genotype
-</span><span class='line'>rs4477212   1   82154   TT
-</span><span class='line'>rs3094315   1   752566  TC
-</span><span class='line'>rs3131972   1   752721  AA
-</span><span class='line'>rs12124819  1   776546  AC
-</span><span class='line'>rs11240777  1   798959  GA
-</span><span class='line'>rs6681049   1   800007  CC</span></code></pre></td></tr></table></div></figure>
+<p><a href="http://archive.org/details/BruceSterlingSxswKeynoteSpeechTheStateOfTheWorld" title="Bruce Sterling Sxsw Keynote, 2006 at archive.org">The full mp3 is available here.</a></p>
+
+<p>Here are some excerpts:</p>
+
+<blockquote><p>Commons based peer production, as an industrial method, is getting it&#8217;s legs under it. This is something I complained about for years. I used to complain that GNU had the wrong name, because the recursive name for GNU is GNU&#8217;s Not Unix. And I describe that as rather childish, because you should not name yourself in opposition to something else, you should have your own name. It&#8217;s like, if GNU&#8217;s not Unix, what is it?</p><p>Well, it&#8217;s commons based peer production.</p></blockquote>
 
 
 
 
-<!-- more -->
+<blockquote><p>Flickr is not a copy of anything else. It is not a hippie knockoff of a commercial product. Wikipedia is not like anything else. A wiki is like nothing known to mankind. Collaborative web-filters are very spooky things; they are without historical precedent. Websites that throw their API&#8217;s open and turn themselves into platforms rather than sites&#8230; it is a little hard to explain the significance of that to everyday people who are not techies and programmers, but that is a major development. The net community is no longer hanging on the coat-tails of Gates. That monopolistic chokehold, that did so much to reduce innovation, and to introduce global criminality to hapless Windows users.</p></blockquote>
 
 
-<p>Rows that begin with a &#8216;#&#8217; are header rows, of which, there may be as many as you please. 23andme puts some data in here, like which reference the coordinates are based on. This is an interesting topic as the build being used has just recently changed from hg18 to hg19. If you downloaded your raw data before August 9, 2012, you have hg18, after, and you have hg19. However, someone forgot to update the header to reflect this, so it still reads &#8220;build36&#8221;.</p>
-
-<p>The rsid column is a unique identifier for reference SNP identifier from <a href="http://www.ncbi.nlm.nih.gov/SNP/get_html.cgi?whichHtml=how_to_submit#REFSNP" title="dbSNP">dbSNP</a>. These identifiers were more useful before the completion of the human genome project, as there was no coordinate system capable of resolving the locations of these various SNP&#8217;s. Now it is possible to address them like you might address a house, with the State or City being analogous to the chromosome and the street address being analogous to the &#8220;position&#8221;. The position is the number of bases from the beginning of the chromosome that a SNP is located at.</p>
-
-<p>The final column is the genotype at the listed address. There are two bases listed because humans have two copies of each chromosome.</p>
-
-<h2>VCF Format</h2>
-
-<p>So this leaves us with a list of addresses. This is well and good, but many bioinformatics applications use a different format, not all that different, called the <a href="http://www.1000genomes.org/wiki/Analysis/Variant%20Call%20Format/vcf-variant-call-format-version-41" title="VCF format">&#8220;Variant Call Format&#8221;</a>. Specifically, a tool for predicting the biological effects of mutations (bases different than the reference bases), uses the VCF format. It is <a href="http://snpeff.sourceforge.net/" title="snpEff">snpEff</a>, or SNP effect predictor.</p>
-
-<p>In order to facilitate the use of the various and sundry tools that use the VCF format, I have made a tool for converting the 23andme raw format to VCF. It is the <a href="https://github.com/arrogantrobot/23andme2vcf" title="23andme2vcf converter">23andme2vcf converter</a>. In order to use it, follow these steps:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>git clone git://github.com/arrogantrobot/23andme2vcf.git
-</span><span class='line'>cd 23andme2vcf
-</span><span class='line'>perl 23andme2vcf.pl /path/to/23andme/raw/data.zip /desired/path/to/output.vcf</span></code></pre></td></tr></table></div></figure>
 
 
-<p>If you do not use git, you may download the tarball from <a href="https://github.com/arrogantrobot/23andme2vcf/tarball/master" title="23andme2vcf converter tarball">github</a>, unpack it, and run line 3 of the above commands.</p>
+<blockquote><p>Only in the United States do dying phone companies lobby the government as if they were indian casinos.</p></blockquote>
+
+
+
+
+<blockquote><p>As you may or may not know, I am spending a lot of my time in Europe, after spending a year in California. I get to see America from the outside now. I get to see America as 94% of the planet sees America. And I look at wireless spreading in London and the spread of broadband in Korea. I&#8217;ve got broadband in Serbia where the phone companies are literally run by criminals in exile. And my broadband in Serbia costs $20 a month. And it works.</p></blockquote>
+
+
+
+
+<blockquote><p>It is decadent, it is sclerotic. It looks like the Soviet Union.</p><p>&#8230;they are turning the USA into a banana republic with rockets.</p><p>Not just politically backward, <em>technically</em> backward.</p></blockquote>
+
+
+
+
+<blockquote><p>The twenty first centry is definitely fertilizing my cyberpunk excentricities.</p></blockquote>
+
+
+
+
+<blockquote><p>People ask me &#8220;have you moved to Belgrade? Is this permanent?&#8221; No, it&#8217;s not permament. Just that, some of my shoes are there, and a closet&#8230; I live out of my laptop now. That&#8217;s how I live. And so do increasing numbers of my collegues.</p></blockquote>
+
+
+
+
+<blockquote><p>The twenty first centry is definitely fertilizing my cyberpunk excentricities.</p></blockquote>
+
+
+
+
+<blockquote><p>It&#8217;s a world of diaspora and globalization. Gypsies and jetsetters. Refugees and tech pioneers. And the differences are that thin.</p></blockquote>
+
+
+
+
+<blockquote><p>I no longer need to be a resident of any particular city. I don&#8217;t make any money in any foreign state. Nothing enters or leaves Belgrade except for ones and zeroes. That&#8217;s all. I never stay there long enough to become permanent. I don&#8217;t even DO permanent. National borders? They&#8217;re like speed bumps.</p></blockquote>
+
+
+<p>This talk is well composed. It is shot through with diamond bullets of poetic insight. Sterling&#8217;s own voice and clearly communicated emotion turns this from a discursion on the quirks of Eastern Europe&#8217;s up and coming intelligentsia into a full-blown harangue on the nature of the world as we find it right now in 2013, from the view of someone looking ahead in 2006.</p>
 </div>
 
 
@@ -181,12 +192,12 @@
   
 
 
-<time datetime="2012-08-13T18:36:00-05:00" pubdate data-updated="true">Aug 13<span>th</span>, 2012</time>
+<time datetime="2013-03-06T00:04:00-06:00" pubdate data-updated="true">Mar 6<span>th</span>, 2013</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/bioinformatics/'>bioinformatics</a>, <a class='category' href='/blog/categories/github/'>github</a>
+    <a class='category' href='/blog/categories/meta/'>meta</a>
   
 </span>
 
@@ -195,7 +206,7 @@
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://archetyp.al/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format/" data-via="plantimals" data-counturl="http://archetyp.al/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format/" >Tweet</a>
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://archetyp.al/blog/2013/03/06/gypsies-and-jet-setters-bruce-sterling-at-2006-sxsw/" data-via="plantimals" data-counturl="http://archetyp.al/blog/2013/03/06/gypsies-and-jet-setters-bruce-sterling-at-2006-sxsw/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
@@ -206,10 +217,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/" title="Previous Post: cae.js: hand it a canvas and stand back">&laquo; cae.js: hand it a canvas and stand back</a>
+        <a class="basic-alignment left" href="/blog/2013/02/24/a-mental-steam-shovel-part-two-the-algorithm/" title="Previous Post: A mental steam shovel part two: the algorithm">&laquo; A mental steam shovel part two: the algorithm</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/08/19/iterated-prisoners-dilemma/" title="Next Post: Iterated Prisoner's Dilemma">Iterated Prisoner's Dilemma &raquo;</a>
       
     </p>
   </footer>
@@ -271,8 +280,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://archetyp.al/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format/';
-        var disqus_url = 'http://archetyp.al/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format/';
+        var disqus_identifier = 'http://archetyp.al/blog/2013/03/06/gypsies-and-jet-setters-bruce-sterling-at-2006-sxsw/';
+        var disqus_url = 'http://archetyp.al/blog/2013/03/06/gypsies-and-jet-setters-bruce-sterling-at-2006-sxsw/';
         var disqus_script = 'embed.js';
       
     (function () {
