@@ -10,6 +10,8 @@ This is the first Bruce Sterling talk that I encountered. Now I'm an inveterate 
 
 [The full mp3 is available here.][0]
 
+<!-- more -->
+
 Here are some excerpts:
 
 {% blockquote %}

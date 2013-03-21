@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tech-support | Archetypal]]></title>
+  <link href="http://archetyp.al/blog/categories/tech-support/atom.xml" rel="self"/>
+  <link href="http://archetyp.al/"/>
+  <updated>2013-03-21T17:42:46-05:00</updated>
+  <id>http://archetyp.al/</id>
+  <author>
+    <name><![CDATA[Rob Long]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Digital Ocean hosting: error 2002 can't connect with local server, and a solution]]></title>
+    <link href="http://archetyp.al/blog/2013/03/21/bad-mysql-install-error-2002-cannot-connect-with-local-server/"/>
+    <updated>2013-03-21T00:12:00-05:00</updated>
+    <id>http://archetyp.al/blog/2013/03/21/bad-mysql-install-error-2002-cannot-connect-with-local-server</id>
+    <content type="html"><![CDATA[<p>I have recently started using <a href="https://www.digitalocean.com/" title="Digital Ocean">Digital Ocean</a> for hosting. I was previously using the free <a href="http://www.heroku.com/" title="Heroku">Heroku</a> hosting, which I liked very much. The DNS was a bit tricky to set up, but once it got configured, it was smooth. I was able to get a one second load time for the archetyp.al index. It's all static files, but I was still happy with Heroku, especially for free. However, I've been diving much deeper into web development lately, and I've decided I need a larger base of operations on the web, and Digital Ocean was at the top of my short list of candidates (along with dreamhost and linode). The SSD's on every machine is what finally sold me.</p>
+
+<p>I've been working on a rails project lately, and I need a dev machine on the cloud for testing purposes. So I found myself needing to set up a rails environment on my new Digital Ocean instance. I naturally went with my friend <a href="http://excid3.com/" title="excid3">chris's</a> excellent blog on <a href="http://excid3.com/blog/setting-up-rails-on-ubuntu-12-10-quantal-quetzal-with-ruby-node-js-nginx-passenger-and-mysql-or-postgres/#.UUqZKXGGggR" title="excid3 on rails setup">setting up rails for Ubuntu 12.10 with NginX, etc</a>. I decided to go with MySQL instead of postgres.</p>
+
+<!-- more -->
+
+
+<h2>ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock'</h2>
+
+<p>When I went through the steps outlined in Chris's blog, I encountered a few snags, including an issue where I couldn't compile Nginx with Passenger support because I didn't have enough ram (I'll write about this soon). I was able to finish after some tinkering. So when it came time to 'rake db:migrate', I pushed button and did NOT receive bacon:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>ERROR 2002 (HY000) </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[rob@mandelbrot ~ ] sudo mysql -u root -p
+</span><span class='line'>ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock'</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Naturally, I went through the various steps one takes when cryptic error messages arise. I checked to see if the mysql process was running:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>No MySQL process running </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ rob@mandelbrot ~ ] ps aux | grep mysql
+</span><span class='line'>rob      11749  0.0  0.0   9388   884 pts/1    S+   00:40   0:00 grep --color=auto mysql</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Indeed, the process was not running. Right. So at least the basic problem is known now, the mysql-server process itself is not running. So what next? Well, let's try to start it!</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>service restart failed.. </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ rob@mandelbrot ~ ] sudo service mysql start
+</span><span class='line'>start: Job failed to start</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Again, no bacon. So I then attempted to re-install the mysql-server package.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>purge mysql-servr package </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ rob@mandelbrot ~ ] sudo apt-get remove mysql-server --purge</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>Again, negative in the bacon dimension. The same results from attempting to start the mysql service. Then finally, I came across the right answer on the <a href="http://askubuntu.com/a/213353" title="askubuntu">askubuntu</a> stack exchange site. After stumbling through many forum threads where the complete removal of mysql-server was never quite reached, askubutu came through:</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>completely remove mysql-server for real </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get purge mysql-server mysql-common
+</span><span class='line'>sudo rm -rf /var/lib/mysql
+</span><span class='line'>sudo apt-get clean
+</span><span class='line'>sudo apt-get install mysql-server</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>That finally did it. After going through the setup process again, I had a working database server.</p>
+]]></content>
+  </entry>
+  
+</feed>

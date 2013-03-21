@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Digital Ocean hosting: error 2002 can't connect with local server, and a solution - Archetypal</title>
+  <meta name="author" content="Rob Long">
+
+  
+  <meta name="description" content="I have recently started using Digital Ocean for hosting. I was previously using the free Heroku hosting, which I liked very much. The DNS was a bit &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://archetyp.al/blog/2013/03/21/bad-mysql-install-error-2002-cannot-connect-with-local-server/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="http://feeds.feedburner.com/Archetypal" rel="alternate" title="Archetypal" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<script src="http://code.jquery.com/jquery-1.7.2.js"></script>
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33156626-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  
+    <style type="text/css">
+        #headerDiv {
+          vertical-align: middle;
+          float: left;
+        }
+    </style>      
+    <div id="headerDiv">
+      <h1><a href="/">Archetypal</a></h1>
+      <h2>looking for patterns in the patterns</h2>
+    </div>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="http://feeds.feedburner.com/Archetypal" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:archetyp.al" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/other_pages/care.html">Cellular Automata</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="http://github.com/arrogantrobot">Github</a></li>
+  <li><a href="http://twitter.com/plantimals"><div><img style="vertical-align:middle" src="/images/twitter.svg" /><span vetical-algin="middle"> Twitter</span></div></a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Digital Ocean Hosting: Error 2002 Can't Connect With Local Server, and a Solution</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-21T00:12:00-05:00" pubdate data-updated="true">Mar 21<span>st</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>I have recently started using <a href="https://www.digitalocean.com/" title="Digital Ocean">Digital Ocean</a> for hosting. I was previously using the free <a href="http://www.heroku.com/" title="Heroku">Heroku</a> hosting, which I liked very much. The DNS was a bit tricky to set up, but once it got configured, it was smooth. I was able to get a one second load time for the archetyp.al index. It&#8217;s all static files, but I was still happy with Heroku, especially for free. However, I&#8217;ve been diving much deeper into web development lately, and I&#8217;ve decided I need a larger base of operations on the web, and Digital Ocean was at the top of my short list of candidates (along with dreamhost and linode). The SSD&#8217;s on every machine is what finally sold me.</p>
+
+<p>I&#8217;ve been working on a rails project lately, and I need a dev machine on the cloud for testing purposes. So I found myself needing to set up a rails environment on my new Digital Ocean instance. I naturally went with my friend <a href="http://excid3.com/" title="excid3">chris&#8217;s</a> excellent blog on <a href="http://excid3.com/blog/setting-up-rails-on-ubuntu-12-10-quantal-quetzal-with-ruby-node-js-nginx-passenger-and-mysql-or-postgres/#.UUqZKXGGggR" title="excid3 on rails setup">setting up rails for Ubuntu 12.10 with NginX, etc</a>. I decided to go with MySQL instead of postgres.</p>
+
+<!-- more -->
+
+
+<h2>ERROR 2002 (HY000): Can&#8217;t connect to local MySQL server through socket &#8216;/var/run/mysqld/mysqld.sock&#8217;</h2>
+
+<p>When I went through the steps outlined in Chris&#8217;s blog, I encountered a few snags, including an issue where I couldn&#8217;t compile Nginx with Passenger support because I didn&#8217;t have enough ram (I&#8217;ll write about this soon). I was able to finish after some tinkering. So when it came time to &#8216;rake db:migrate&#8217;, I pushed button and did NOT receive bacon:</p>
+
+<figure class='code'><figcaption><span>ERROR 2002 (HY000) </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[rob@mandelbrot ~ ] sudo mysql -u root -p
+</span><span class='line'>ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/var/run/mysqld/mysqld.sock'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Naturally, I went through the various steps one takes when cryptic error messages arise. I checked to see if the mysql process was running:</p>
+
+<figure class='code'><figcaption><span>No MySQL process running </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ rob@mandelbrot ~ ] ps aux | grep mysql
+</span><span class='line'>rob      11749  0.0  0.0   9388   884 pts/1    S+   00:40   0:00 grep --color=auto mysql</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Indeed, the process was not running. Right. So at least the basic problem is known now, the mysql-server process itself is not running. So what next? Well, let&#8217;s try to start it!</p>
+
+<figure class='code'><figcaption><span>service restart failed.. </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ rob@mandelbrot ~ ] sudo service mysql start
+</span><span class='line'>start: Job failed to start</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Again, no bacon. So I then attempted to re-install the mysql-server package.</p>
+
+<figure class='code'><figcaption><span>purge mysql-servr package </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>[ rob@mandelbrot ~ ] sudo apt-get remove mysql-server --purge</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Again, negative in the bacon dimension. The same results from attempting to start the mysql service. Then finally, I came across the right answer on the <a href="http://askubuntu.com/a/213353" title="askubuntu">askubuntu</a> stack exchange site. After stumbling through many forum threads where the complete removal of mysql-server was never quite reached, askubutu came through:</p>
+
+<figure class='code'><figcaption><span>completely remove mysql-server for real </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>sudo apt-get purge mysql-server mysql-common
+</span><span class='line'>sudo rm -rf /var/lib/mysql
+</span><span class='line'>sudo apt-get clean
+</span><span class='line'>sudo apt-get install mysql-server</span></code></pre></td></tr></table></div></figure>
+
+
+<p>That finally did it. After going through the setup process again, I had a working database server.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Rob Long</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-21T00:12:00-05:00" pubdate data-updated="true">Mar 21<span>st</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/tech-support/'>tech-support</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://archetyp.al/blog/2013/03/21/bad-mysql-install-error-2002-cannot-connect-with-local-server/" data-via="plantimals" data-counturl="http://archetyp.al/blog/2013/03/21/bad-mysql-install-error-2002-cannot-connect-with-local-server/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/03/06/gypsies-and-jet-setters-bruce-sterling-at-2006-sxsw/" title="Previous Post: Gypsies and Jet-setters: Bruce Sterling at 2006 SXSW">&laquo; Gypsies and Jet-setters: Bruce Sterling at 2006 SXSW</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/03/21/bad-mysql-install-error-2002-cannot-connect-with-local-server/">Digital Ocean hosting: error 2002 can't connect with local server, and a solution</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/03/06/gypsies-and-jet-setters-bruce-sterling-at-2006-sxsw/">Gypsies and Jet-setters: Bruce Sterling at 2006 SXSW</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/24/a-mental-steam-shovel-part-two-the-algorithm/">A mental steam shovel part two: the algorithm</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/02/14/a-mental-steam-shovel/">A mental steam shovel</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/12/02/textruder/">Textruder</a>
+      </li>
+    
+  </ul>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2013 - Rob Long -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'archetypal';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://archetyp.al/blog/2013/03/21/bad-mysql-install-error-2002-cannot-connect-with-local-server/';
+        var disqus_url = 'http://archetyp.al/blog/2013/03/21/bad-mysql-install-error-2002-cannot-connect-with-local-server/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
