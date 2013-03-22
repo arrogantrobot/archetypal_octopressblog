@@ -134,10 +134,12 @@ function cae() {
     //copy canvas onto the appropriate pixel buffer
     var flipBuffers = function() {
         if (bufferFlag) {
-            pixelBufferTwo = m_context.getImageData(0, 0, width, height - pixPerCell);
+            h = (height == pixPerCell) ? 1 : height - pixPerCell;
+            pixelBufferTwo = m_context.getImageData(0, 0, width, h);
             bufferFlag--;
         } else {
-            pixelBufferOne = m_context.getImageData(0, 0, width, height - pixPerCell);
+            h = (height == pixPerCell) ? 1 : height - pixPerCell;
+            pixelBufferOne = m_context.getImageData(0, 0, width, h);
             bufferFlag++;
         }
     }
@@ -191,7 +193,6 @@ function cae() {
             changeRule();
         } else {
             if (switchRule()) {
-                console.log("changeRule");
                 changeRule();
             }
         }
