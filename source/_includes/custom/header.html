@@ -6,9 +6,11 @@
           float: left;
         }
     </style>      
-    <div id="headerDiv">
-      <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
-      <h2>{{ site.subtitle }}</h2>
+    <div id="headerDiv" class="headerTitleBackground">
+      <div class="headerContent">
+        <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+        <h2>{{ site.subtitle }}</h2>
+      </div>
     </div>
   {% else %}
     <h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>

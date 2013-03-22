@@ -4,5 +4,11 @@ header[role="banner"] {
      background-image: url(/images/arch_hdr_3.png);
      background-repeat: no-repeat;
      background-color: transparent;
+     padding-bottom: 26px;
 }
 
+.headerTitleBackground {
+    background-color: rgba(0,0,0,0.5);
+    padding: 5px;
+    border-radius: 4px;
+}   
