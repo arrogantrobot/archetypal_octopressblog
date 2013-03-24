@@ -7,7 +7,7 @@ function app() {
     if (params[0] == "ppc") {
         pixPerCell = params[1];
     } else {
-        pixPerCell = "2";
+        pixPerCell = "10";
     }
     thing.setPixelsPerCell(parseInt(pixPerCell));
     thing.init("main_can");
