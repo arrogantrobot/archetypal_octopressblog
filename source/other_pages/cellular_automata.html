@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Automated Cellular Automata</title>
+    <style type="text/css">
+      body,html {
+        height: 100%;
+        min-height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+      .my_can {
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+      }
+    </style>
+    <script type="text/javascript">
+        function getViewportDimension(){
+            var e = window;
+            var a = 'inner';
+            if (!('innerWidth' in window)){
+                a = 'client';
+                e = document.documentElement || document.body;
+            }
+            return { width : e[ a+'Width' ] , height : e[ a+'Height' ] }
+        }
+    </script>
+  </head>
+  <body onload="app();">
+    <script src="cae.js"></script>
+    <script src="app.js"></script>
+    <canvas id="main_can" class="my_can" />
+    <script>
+      var m_canvas = document.getElementById("main_can");
+      var dim = getViewportDimension();
+      m_canvas.width = dim.width;
+      m_canvas.height = dim.height;
+    </script>
+  </body>
+</html>
