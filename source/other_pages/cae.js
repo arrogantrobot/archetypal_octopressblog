@@ -41,7 +41,7 @@ function cae() {
 
     //default list of rules
     var populateRules = function() {
-        rules = new Array(57,18,90,129,130,131,132,133);
+        rules = new Array(57,18,30,90,110,129,130,131,132,133);
     }
 
     var calcTBF = function() {
