@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bioinformatics, | Archetypal]]></title>
   <link href="http://archetyp.al/blog/categories/bioinformatics-/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2013-11-26T21:51:52-06:00</updated>
+  <updated>2013-11-26T21:59:52-06:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -18,7 +18,7 @@
     <link href="http://archetyp.al/blog/2013/11/26/fda-23andme-and-innovation/"/>
     <updated>2013-11-26T09:21:00-06:00</updated>
     <id>http://archetyp.al/blog/2013/11/26/fda-23andme-and-innovation</id>
-    <content type="html"><![CDATA[<p>I'm neither a doctor nor a lawyer, so consider my opinions appropriately. I began my career as a software developer at the <a href="http://genome.wustl.edu/" title="The Genome Institute">Genome Institute (TGI)</a> at Washington University in St.Louis. I didn't set out to get into bioinformatics, it just happened that it was the most interesting problem I could find the work on in <a href="http://www.articulateventures.com/articulate-blog/category/a-newcomers-view-of-st-louis-a-heroic-city" title="St.Louis">St.Louis</a> at the time I was getting my degree in computer science. So I set about learning the craft of software development and the field of bioinformatics at the same time.</p>
+    <content type="html"><![CDATA[<p>I'm neither a doctor nor a lawyer, so consider my opinions appropriately. I began my career as a software developer at the <a href="http://genome.wustl.edu/" title="The Genome Institute">Genome Institute (TGI)</a> at Washington University in St.Louis. I didn't set out to get into bioinformatics, it just happened that it was the most interesting problem to work on in <a href="http://www.articulateventures.com/articulate-blog/category/a-newcomers-view-of-st-louis-a-heroic-city" title="St.Louis">St.Louis</a> at the time I was getting my degree in computer science. So I set about learning the craft of software development and the field of bioinformatics at the same time.</p>
 
 <p>As many before me have noticed, biology and computers are strangely similar at their most basic level. Both decompose into some basic operations that get repeated over and over, with important results emerging at higher orders from the basic operations. Computer processors can only do simplistic operations on a few pieces of data at a time. Add two numbers. Multiply two numbers. Compare two numbers. <a href="https://en.wikipedia.org/wiki/BLAST" title="BLAST Algorithm">Algorithms</a> of enormous complexity can be implemented as a series of much smaller operations. Such is the case with biology. DNA is transcribed into RNA, which gets translated into proteins, which interact with each other in a cascading series of <a href="https://en.wikipedia.org/wiki/Insulin_signal_transduction_pathway_and_regulation_of_blood_glucose" title="Insulin Pathway">pathways</a> that in the end results in the swarm of cells that is a human being.</p>
 
