@@ -3,7 +3,7 @@ layout: post
 title: "A mental steam shovel"
 date: 2013-02-14 23:41
 comments: true
-categories: c++, programming, ai
+categories: programming, ai
 ---
 
 A month ago I was hanging out with my friend [Chris][0]. We were having our weekly meetup, talking about our approach to our work, recent experiences, and just enjoying our [surroundings][1]. I noticed a connect four game sitting in the corner, on a dark wooden ledge. The old, disjoint of additive and subtractive primary colors, blue and yellow plastic version of the game would have done the trick, but this was even better. It was a wooden version of the board. There were two wooden dowels, each half the width of the board, inserted just beneath the bottom row, which held the pieces in the board. When you draw them out, one from each side, the game is reset and the pieces fall to the bottom of the game board.
