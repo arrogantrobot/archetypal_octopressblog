@@ -9,8 +9,19 @@ function sierpinski() {
   var point;
   var timeBetweenDots = 100;
 
+  var sizeCanvas = function() {
+    if (window.innerWidth > window.innerHeight) {
+      canvas.height = window.innerHeight;
+      canvas.width = Math.floor(window.innerHeight * (100 / 88 ));
+    } else {
+      canvas.width = window.innerWidth;
+      canvas.height = Math.floor(window.innerWidth * 0.88);
+    }
+  }
+
   var setCanvasId = function(id) {
     canvas = document.getElementById(id);
+    sizeCanvas();
     width = canvas.width;
     height = canvas.height;
   }
