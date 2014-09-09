@@ -2,80 +2,86 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://archetyp.al/blog/2012/07/08/archetypical-post/</loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://archetyp.al/blog/2012/07/08/octopress-coderwall-aside/</loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://archetyp.al/blog/2012/07/16/cae-dot-js-hand-it-a-canvas-and-stand-back/</loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://archetyp.al/blog/2012/08/13/convert-your-23andme-raw-data-into-vcf-format/
         </loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://archetyp.al/blog/2012/08/19/iterated-prisoners-dilemma/</loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://archetyp.al/blog/2012/09/09/automatic-mechanical-self-reproduction/</loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://archetyp.al/blog/2012/12/02/textruder/</loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://archetyp.al/blog/2013/02/14/a-mental-steam-shovel/</loc>
-        <lastmod>2013-12-10T17:50:36-06:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://archetyp.al/blog/2013/02/24/a-mental-steam-shovel-part-two-the-algorithm/
         </loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://archetyp.al/blog/2013/03/06/gypsies-and-jet-setters-bruce-sterling-at-2006-sxsw/
         </loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://archetyp.al/blog/2013/03/21/bad-mysql-install-error-2002-cannot-connect-with-local-server/
         </loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://archetyp.al/blog/2013/11/26/fda-23andme-and-innovation/</loc>
-        <lastmod>2013-11-26T21:55:48-06:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
         <loc>
             http://archetyp.al/blog/2014/05/05/biowordcount-a-brief-introduction-to-hadoop-for-the-bioinformatics-practicioner/
         </loc>
-        <lastmod>2014-05-10T21:11:40-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
     <url>
-        <loc>http://archetyp.al/robots.txt</loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
-    </url>
-    <url>
-        <loc>http://archetyp.al/</loc>
-        <lastmod>2014-05-10T21:11:40-05:00</lastmod>
+        <loc>
+            http://archetyp.al/blog/2014/09/07/biowordcount-ad-hoc-bioinformatics-on-apache-spark/
+        </loc>
+        <lastmod>2014-09-08T23:06:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://archetyp.al/blog/archives/</loc>
-        <lastmod>2014-05-10T21:11:40-05:00</lastmod>
+        <lastmod>2014-09-08T23:06:39-05:00</lastmod>
     </url>
     <url>
         <loc>http://archetyp.al/cellular-automata-rule-explorer/</loc>
-        <lastmod>2013-04-06T00:14:17-05:00</lastmod>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://archetyp.al/</loc>
+        <lastmod>2014-09-08T23:06:39-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://archetyp.al/robots.txt</loc>
+        <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
 </urlset>

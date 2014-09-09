@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bigdata | Archetypal]]></title>
   <link href="http://archetyp.al/blog/categories/bigdata/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2014-05-12T01:06:43-05:00</updated>
+  <updated>2014-09-08T23:07:03-05:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -12,6 +12,120 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[BioWordCount: An Intro To Bioinformatics on Apache Spark]]></title>
+    <link href="http://archetyp.al/blog/2014/09/07/biowordcount-ad-hoc-bioinformatics-on-apache-spark/"/>
+    <updated>2014-09-07T18:48:00-05:00</updated>
+    <id>http://archetyp.al/blog/2014/09/07/biowordcount-ad-hoc-bioinformatics-on-apache-spark</id>
+    <content type="html"><![CDATA[<p>Previously on <a href="http://archetyp.al" title="archetyp.al homepage">archetyp.al</a>, I demonstrated a <a href="http://archetyp.al/blog/2014/05/05/biowordcount-a-brief-introduction-to-hadoop-for-the-bioinformatics-practicioner/" title="previous archetyp.al post on hadoop mapreduce">bioinformatics use for Hadoop MapReduce</a>. The idea was to build on the ubiquitous word count example, but using a problem which is at least somewhat relevant to bioinformatics. So I read in a VCF file and parsed out the reference and the variant bases, and collected an overall count of the mutation spectrum. So here we are, back at it with an <a href="http://spark.apache.org/" title="Apache Spark Homepage">Apache Spark</a> version of the demo.</p>
+
+<p>Why Spark? There are a lot of reasons to go with Spark instead of MapReduce, but for me the most convincing reason is time. In this case the MapReduce solution written in Java takes north of 100 lines of code to set up. Granted, some of that is taken up parsing VCF lines for details which go unused, but 100 is a fair count. Now have a look at the Spark solution:</p>
+
+<p>``` scala BioWordCountSpark.scala https://github.com/plantimals/BioWordCountSpark/blob/master/src/main/scala/al/archetyp/biowordcount/BioWordCountSpark.scala link to github
+import org.apache.spark.SparkContext
+import org.apache.spark.SparkContext._
+import org.apache.spark.SparkConf</p>
+
+<p>object BioWordCountSpark {
+  def main(args:Array[String]){</p>
+
+<pre><code>val sc = new SparkContext(new SparkConf().setAppName("BioWordCount-Spark"))
+val file = sc.textFile(args(0))
+val rows = file.filter(!_.startsWith("#"))
+val refVar = rows.map(_.split("\t").drop(3).take(2))
+val refVarNoIndel = refVar.filter(refvar =&gt; (refvar(0).length() == 1) &amp;&amp; (refvar(1).length() == 1))
+val answer = refVarNoIndel.map(data =&gt; (data(0)+" -&gt; "+data(1) -&gt; 1)).reduceByKey(_ + _)
+answer.sortByKey().saveAsTextFile("answer")
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<p>What is this code doing? If you are familiar with Scala, it accomplishes what it looks like it's doing, but via different means. Start out defining a singleton object which contains the main function to be invoked upon execution. The <code>SparkContext</code> object is used to set up the Spark job. Then the input file is loaded from the first command line parameter, <code>arg(0)</code>. All header lines, those which begin with a '#' are filtered.</p>
+
+<p>The <code>refVar = ...</code> line is where I drop the first three columns and take only the next 2 columns, which are the "reference" and "variant" columns, respectively. I feel like there's a better way to select arbitrary columns to keep than the take/drop combination. If you have a suggestion, please leave a comment. Then the collection of ref and variant columns is filtered for length == 1, because we want to remove any indels or structural variants. The remaining ref/var pairs are used to generate a key and value pair, with the value being 1. The value is one because it represents the count of input lines which had a similar concatenation of ref/var values. The results are then pushed out to the <code>./answer</code> directory.</p>
+
+<p>And that's pretty much everything. There's a an sbt file, which I lifted straight from the <a href="http://spark.apache.org/docs/latest/quick-start.html#standalone-applications" title="spark standalone apps">spark wordcount example</a>. In fact, this whole demo is really an adaptation of the afore mentioned Spark demo, with a slightly different example problem.</p>
+
+<p>In order to set this all up, create a folder to work in. Create a file named <code>build.sbt</code> in the root of your project and paste in the sbt outline from the Spark wordcount example:</p>
+
+<p><code>scala build.sbt
+name := "BioWordCount-Spark"
+version := "1.0"
+scalaVersion := "2.10.4"
+libraryDependencies += "org.apache.spark" %% "spark-core" % "1.0.2"
+resolvers += "Akka Repository" at "http://repo.akka.io/releases/"
+</code></p>
+
+<p>With the sbt file out of the way, let's create the proper spot for the source file <code>mkdir -p src/main/scala/al/archetyp/biowordcount</code>. The source file <code>BioWordCountSpark.scala</code> belongs in the biowordcount directory.</p>
+
+<p>From the root directory of the project, run <code>sbt package</code>. You should see the source file get compiled, and a jar created under <code>./target</code>.</p>
+
+<p>The application should now be compiled and packaged up for usage. Let's look for a tasty VCF to crunch with our new Spark app. I went to <a href="ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz" title="100 genomes VCF chr1 download">1000genomes.org</a> and dug up a VCF containing only variants fro m human chromosome 22, the shortest autosomal contig. You can find the exact file I used <a href="ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr22.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz" title="1000 genomes VCF chr22 download">here</a>. Once unzipped, the file is 10GB, with over 1,000,000 lines. There are over 2000 samples in this VCF, which means each row has more than 2000 columns. I used the following spark-submit command to run the app on this VCF file:</p>
+
+<p><code>bash spark-submit command
+time /Users/rob/bin/spark/spark-1.0.2-bin-hadoop2/bin/spark-submit \
+--class "BioWordCountSpark" \
+--master local[4] \
+target/scala-2.10/biowordcount-spark_2.10-1.0.jar \
+/Users/rob/Downloads/vcf/ALL.chr22.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf
+</code></p>
+
+<p>Your paths will vary, especially the location of the spark-submit bin and the vcf file to be counted. The "master" portion of the command directs spark to run this app locally, using as many as 4 cores. If you have a cluster, perhaps on aws, the <code>--master</code> argument should be replaced with the url of the Spark master.</p>
+
+<p>Here follows my resuling count for the 1000genomes VCF:
+<code>bash output
+cat ./answer/*
+(A -&gt; C,31555)
+(A -&gt; G,119609)
+(A -&gt; T,27133)
+(C -&gt; A,46771)
+(C -&gt; G,49737)
+(C -&gt; T,253419)
+(G -&gt; A,254137)
+(G -&gt; C,49410)
+(G -&gt; T,47227)
+(T -&gt; A,26446)
+(T -&gt; C,118881)
+(T -&gt; G,31131)
+</code></p>
+
+<p>When running the app locally on my 2014 Macbook Pro with four cores, it was able to complete within 1 minute and 1 second. The OSX kernel may have cached some of the data, as I did run this command several times, with slight improvements each time. However, for processing a 10GB file with 1 million rows, and over 2000 columns, 1 minute is pretty good. Just to see how this approach stacks up against a python script, I decided to solve the same problem in python. I know that the real benefit to Spark comes when you are running on a multinode cluster, but I was sufficiently impressed with this performance that I wanted to get an idea how long it would take for python to do something similar. Here's my python solution:</p>
+
+<p>``` python biowordcount.py https://github.com/plantimals/BioWordCountSpark/blob/master/src/main/python/biowordcount.py</p>
+
+<h1>!/usr/bin/env python</h1>
+
+<p>import sys</p>
+
+<p>count = {}
+with open(sys.argv<a href="http://spark.apache.org/" title="Apache Spark Homepage">1</a>, 'r') as fh:
+  for l in fh:</p>
+
+<pre><code>if l[0] == "#":
+  continue
+cols = l.strip().split("\t")
+ref = cols[3]
+var = cols[4]
+if len(ref) == 1 and len(var) == 1:
+  key = "{0} -&gt; {1}".format(ref,var)
+  if count.get(key, -1) == -1:
+    count[key] = 1
+  else:
+    count[key] += 1
+</code></pre>
+
+<p>for k in count:
+  print "({0},{1})".format(k, count[k])
+```</p>
+
+<p>When running the above python script on the same vcf, the running time was 1 minute and 40 seconds, reliably. So the speed up is not that amazing. I grabbed larger VCF, this time <a href="ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz" title="100 genomes VCF chr1 download">chromosome 1 from 1000 genomes</a>, which is 61GB when unzipped. The Spark solution took 5 minutes and 50 seconds, while the python solution took 12 minutes and 5 seconds.</p>
+
+<p>Not only is the Spark code faster to write (once you understand the basics), but it actually runs faster. Turn around times on test rus are reduced when the app itself runs faster. It is not unreasonable to assume that code which can be written so much faster and in so many fewer lines will be much easier to read and understand. The density of Scala allows the reader to see and understand larger swaths of the code with in the space of a glance. I'm lookging forward to exploring the Spark ecosystem further.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[BioWordCount: A Brief Introduction to Hadoop For The Bioinformatics Practitioner]]></title>
