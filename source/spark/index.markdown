@@ -19,6 +19,7 @@ This is meant to be a repository of useful Spark information, links, projects, e
 * [Spark Quick Start Guide][6] - a good intro to Spark Shell and simple Spark apps in Scala, Python, or Java
 * [Spark & Data Science][9] - an article by [Cloudera's][10] [Sean Owen][11] on the Data Science landscape, and how it slopes towards Spark
 * [databricks][13] - a Spark vendor
+* [Apache Spark Youtube Channel][22] - chock full of wonderful content
 
 ##Interesting Spark Projects
 * [MLLib][7] - a machine learning library built from Spark
@@ -26,6 +27,17 @@ This is meant to be a repository of useful Spark information, links, projects, e
 * [GraphX][12] - efficiently express graph computation at scale through Spark
 
 Apache Spark originated at Berkeley's [AMPLab][14].
+
+##Spark on Twitter
+* [@ApacheSpark][15]
+* [@AMPLab][21] - the Berkeley lab where Spark began
+* [@deanwampler][17] - from [@typesafe][18]
+* [@sean_r_owen][11] - data science at cloudera
+* [@GeoTrellis][16] - GeoSpatial framework on Spark
+
+##Talks
+* [Dave Patterson][19] - faculty member at [@AMPLab][21] talking about the [future of big data and genomics research][20]
+* [Dean Wampler talking][23] about the connection between [databricks][13] and [typesafe][24] and the ecosystem in general
 
 [0]: http://archetyp.al/blog/2014/09/07/biowordcount-ad-hoc-bioinformatics-on-apache-spark/ "biowordcount"
 [1]: https://github.com/plantimals/BioWordCountSpark "biowordcount github repo"
@@ -42,3 +54,13 @@ Apache Spark originated at Berkeley's [AMPLab][14].
 [12]: http://amplab.github.io/graphx/ "graphx"
 [13]: http://databricks.com/spark "databricks"
 [14]: https://amplab.cs.berkeley.edu/ "AMPLab"
+[15]: https://twitter.com/ApacheSpark
+[16]: https://twitter.com/GeoTrellis
+[17]: https://twitter.com/deanwampler
+[18]: https://twitter.com/typesafe
+[19]: http://en.wikipedia.org/wiki/David_Patterson_%28computer_scientist%29
+[20]: https://www.youtube.com/watch?v=RwyEEMw-NR8
+[21]: https://twitter.com/amplab
+[22]: https://www.youtube.com/user/TheApacheSpark
+[23]: https://www.youtube.com/watch?v=a1eWu3AQ9yY
+[24]: http://typesafe.com/
