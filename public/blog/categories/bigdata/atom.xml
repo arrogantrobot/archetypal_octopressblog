@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bigdata | Archetypal]]></title>
   <link href="http://archetyp.al/blog/categories/bigdata/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2014-09-14T18:34:52-05:00</updated>
+  <updated>2014-09-14T18:40:25-05:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -18,7 +18,7 @@
     <link href="http://archetyp.al/blog/2014/09/07/biowordcount-ad-hoc-bioinformatics-on-apache-spark/"/>
     <updated>2014-09-07T18:48:00-05:00</updated>
     <id>http://archetyp.al/blog/2014/09/07/biowordcount-ad-hoc-bioinformatics-on-apache-spark</id>
-    <content type="html"><![CDATA[<p>Previously on <a href="http://archetyp.al" title="archetyp.al homepage">archetyp.al</a>, I demonstrated a <a href="http://archetyp.al/blog/2014/05/05/biowordcount-a-brief-introduction-to-hadoop-for-the-bioinformatics-practicioner/" title="previous archetyp.al post on hadoop mapreduce">bioinformatics use for Hadoop MapReduce</a>. The idea was to build on the ubiquitous word count example, but using a problem which is at least somewhat relevant to bioinformatics. So I read in a VCF file and parsed out the reference and the variant bases, and collected an overall count of the mutation spectrum. So here we are, back at it with an <a href="http://spark.apache.org/" title="Apache Spark Homepage">Apache Spark</a> version of the demo.</p>
+    <content type="html"><![CDATA[<p>Previously on <a href="http://archetyp.al" title="archetyp.al homepage">archetyp.al</a>, I demonstrated a <a href="http://archetyp.al/blog/2014/05/05/biowordcount-a-brief-introduction-to-hadoop-for-the-bioinformatics-practicioner/" title="previous archetyp.al post on hadoop mapreduce">bioinformatics use for Hadoop MapReduce</a>. The idea was to build on the ubiquitous word count example, but using a problem which is at least somewhat relevant to bioinformatics. So I read in a VCF file and parsed out the reference and the variant bases, and collected an overall count of the mutation spectrum. So here we are, back at it with an <a href="http://spark.apache.org/" title="Apache Spark Homepage">Apache Spark</a> version of the demo. Check out my <a href="http://archetyp.al/spark">listing of useful spark links</a> for a direction to go after this demo.</p>
 
 <p>Why Spark? There are a lot of reasons to go with Spark instead of MapReduce, but for me the most convincing reason is time. In this case the MapReduce solution written in Java takes north of 100 lines of code to set up. Granted, some of that is taken up parsing VCF lines for details which go unused, but 100 is a fair count. Now have a look at the Spark solution:</p>
 

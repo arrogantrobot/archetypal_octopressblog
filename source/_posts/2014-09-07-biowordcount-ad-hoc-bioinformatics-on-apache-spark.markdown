@@ -6,7 +6,7 @@ comments: true
 categories: [ bioinformatics, spark, hadoop, bigdata ]
 ---
 
-Previously on [archetyp.al][2], I demonstrated a [bioinformatics use for Hadoop MapReduce][0]. The idea was to build on the ubiquitous word count example, but using a problem which is at least somewhat relevant to bioinformatics. So I read in a VCF file and parsed out the reference and the variant bases, and collected an overall count of the mutation spectrum. So here we are, back at it with an [Apache Spark][1] version of the demo.
+Previously on [archetyp.al][2], I demonstrated a [bioinformatics use for Hadoop MapReduce][0]. The idea was to build on the ubiquitous word count example, but using a problem which is at least somewhat relevant to bioinformatics. So I read in a VCF file and parsed out the reference and the variant bases, and collected an overall count of the mutation spectrum. So here we are, back at it with an [Apache Spark][1] version of the demo. Check out my [listing of useful spark links][8] for a direction to go after this demo.
 
 Why Spark? There are a lot of reasons to go with Spark instead of MapReduce, but for me the most convincing reason is time. In this case the MapReduce solution written in Java takes north of 100 lines of code to set up. Granted, some of that is taken up parsing VCF lines for details which go unused, but 100 is a fair count. Now have a look at the Spark solution:
 
@@ -122,3 +122,4 @@ Not only is the Spark code faster to write (once you understand the basics), but
 [5]: ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz "100 genomes VCF chr1 download"
 [6]: http://docs.scala-lang.org/tutorials/tour/anonymous-function-syntax.html "lambdas or anonymous functions"
 [7]: http://www.1000genomes.org/ "1000 genomes"
+[8]: http://archetyp.al/spark
