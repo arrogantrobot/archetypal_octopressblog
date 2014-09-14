@@ -84,4 +84,8 @@
         <loc>http://archetyp.al/robots.txt</loc>
         <lastmod>2014-09-07T18:25:39-05:00</lastmod>
     </url>
+    <url>
+        <loc>http://archetyp.al/spark/</loc>
+        <lastmod>2014-09-14T17:00:52-05:00</lastmod>
+    </url>
 </urlset>
