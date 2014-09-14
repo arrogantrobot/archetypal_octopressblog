@@ -30,7 +30,13 @@ object BioWordCountSpark {
 
 What is this code doing? If you are familiar with Scala, it accomplishes what it looks like it's doing, but via different means. Start out defining a singleton object which contains the main function to be invoked upon execution. The ```SparkContext``` object is used to set up the Spark job. Then the input file is loaded from the first command line parameter, ```arg(0)```. All header lines, those which begin with a '#' are filtered. 
 
-The ```refVar = ...``` line is where I drop the first three columns and take only the next 2 columns, which are the "reference" and "variant" columns, respectively. I feel like there's a better way to select arbitrary columns to keep than the take/drop combination. If you have a suggestion, please leave a comment. Then the collection of ref and variant columns is filtered for length == 1, because we want to remove any indels or structural variants. The remaining ref/var pairs are used to generate a key and value pair, with the value being 1. The value is one because it represents the count of input lines which had a similar concatenation of ref/var values. The results are then pushed out to the ```./answer``` directory.
+The ```refVar = ...``` line is where I drop the first three columns and take only the next 2 columns, which are the "reference" and "variant" columns, respectively. I feel like there's a better way to select arbitrary columns to keep than the take/drop combination. If you have a suggestion, please leave a comment. Then the collection of ref and variant columns is filtered for length == 1, because we want to remove any indels or structural variants.
+
+Line 12 is really where the magic happens. This is the step that is explicitly a MapReduce operation. The map function is provided a [lambda (or anonymous function)][6], which is run on each member of the ```refVarNoIndel``` collection. This lambda function simply concatenates the two columns, ref and var, into a single string "ref -> var" and then constructs a tuple with that string as the first value, and the number 1 as the second value.
+
+Then, following immediately after the map operation, and on the same line no less, is the ```reduceByKey``` function. For those unfamiliar with Scala, the odd looking lambda, ```(_ + _)``` is shorthand for ```(a, b => (a + b))```. This defines how the reduce function combines the values it receives from the map function, it adds each data point to a running total by key, and returns a list of those keys and their respective totals.
+
+Line 13 then sorts the results and pushes them out to the ```./answer``` directory.
 
 And that's pretty much everything. There's a an sbt file, which I lifted straight from the [spark wordcount example][3]. In fact, this whole demo is really an adaptation of the afore mentioned Spark demo, with a slightly different example problem.
 
@@ -48,7 +54,7 @@ With the sbt file out of the way, let's create the proper spot for the source fi
 
 From the root directory of the project, run ```sbt package```. You should see the source file get compiled, and a jar created under ```./target```.
 
-The application should now be compiled and packaged up for usage. Let's look for a tasty VCF to crunch with our new Spark app. I went to [1000genomes.org][5] and dug up a VCF containing only variants fro m human chromosome 22, the shortest autosomal contig. You can find the exact file I used [here][4]. Once unzipped, the file is 10GB, with over 1,000,000 lines. There are over 2000 samples in this VCF, which means each row has more than 2000 columns. I used the following spark-submit command to run the app on this VCF file:
+The application should now be compiled and packaged up for usage. Let's look for a tasty VCF to crunch with our new Spark app. I went to [1000genomes.org][5] and dug up a VCF containing only variants from human chromosome 22, the shortest autosomal contig. You can find the exact file I used [here][4]. Once unzipped, the file is 10GB, with over 1,000,000 lines. There are over 2000 samples in this VCF, which means each row has more than 2000 columns. I used the following spark-submit command to run the app on this VCF file:
 
 ``` bash spark-submit command
 time /Users/rob/bin/spark/spark-1.0.2-bin-hadoop2/bin/spark-submit \
@@ -114,3 +120,4 @@ Not only is the Spark code faster to write (once you understand the basics), but
 [3]: http://spark.apache.org/docs/latest/quick-start.html#standalone-applications "spark standalone apps"
 [4]: ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr22.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz "1000 genomes VCF chr22 download"
 [5]: ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz "100 genomes VCF chr1 download"
+[6]: http://docs.scala-lang.org/tutorials/tour/anonymous-function-syntax.html "lambdas or anonymous functions"

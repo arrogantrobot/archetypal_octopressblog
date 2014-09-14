@@ -4,7 +4,7 @@
   <title><![CDATA[Category: bioinformatics | Archetypal]]></title>
   <link href="http://archetyp.al/blog/categories/bioinformatics/atom.xml" rel="self"/>
   <link href="http://archetyp.al/"/>
-  <updated>2014-09-08T23:07:03-05:00</updated>
+  <updated>2014-09-14T12:47:53-05:00</updated>
   <id>http://archetyp.al/</id>
   <author>
     <name><![CDATA[Rob Long]]></name>
@@ -45,7 +45,13 @@ answer.sortByKey().saveAsTextFile("answer")
 
 <p>What is this code doing? If you are familiar with Scala, it accomplishes what it looks like it's doing, but via different means. Start out defining a singleton object which contains the main function to be invoked upon execution. The <code>SparkContext</code> object is used to set up the Spark job. Then the input file is loaded from the first command line parameter, <code>arg(0)</code>. All header lines, those which begin with a '#' are filtered.</p>
 
-<p>The <code>refVar = ...</code> line is where I drop the first three columns and take only the next 2 columns, which are the "reference" and "variant" columns, respectively. I feel like there's a better way to select arbitrary columns to keep than the take/drop combination. If you have a suggestion, please leave a comment. Then the collection of ref and variant columns is filtered for length == 1, because we want to remove any indels or structural variants. The remaining ref/var pairs are used to generate a key and value pair, with the value being 1. The value is one because it represents the count of input lines which had a similar concatenation of ref/var values. The results are then pushed out to the <code>./answer</code> directory.</p>
+<p>The <code>refVar = ...</code> line is where I drop the first three columns and take only the next 2 columns, which are the "reference" and "variant" columns, respectively. I feel like there's a better way to select arbitrary columns to keep than the take/drop combination. If you have a suggestion, please leave a comment. Then the collection of ref and variant columns is filtered for length == 1, because we want to remove any indels or structural variants.</p>
+
+<p>Line 12 is really where the magic happens. This is the step that is explicitly a MapReduce operation. The map function is provided a <a href="http://docs.scala-lang.org/tutorials/tour/anonymous-function-syntax.html" title="lambdas or anonymous functions">lambda (or anonymous function)</a>, which is run on each member of the <code>refVarNoIndel</code> collection. This lambda function simply concatenates the two columns, ref and var, into a single string "ref -> var" and then constructs a tuple with that string as the first value, and the number 1 as the second value.</p>
+
+<p>Then, following immediately after the map operation, and on the same line no less, is the <code>reduceByKey</code> function. For those unfamiliar with Scala, the odd looking lambda, <code>(_ + _)</code> is shorthand for <code>(a, b =&gt; (a + b))</code>. This defines how the reduce function combines the values it receives from the map function, it adds each data point to a running total by key, and returns a list of those keys and their respective totals.</p>
+
+<p>Line 13 then sorts the results and pushes them out to the <code>./answer</code> directory.</p>
 
 <p>And that's pretty much everything. There's a an sbt file, which I lifted straight from the <a href="http://spark.apache.org/docs/latest/quick-start.html#standalone-applications" title="spark standalone apps">spark wordcount example</a>. In fact, this whole demo is really an adaptation of the afore mentioned Spark demo, with a slightly different example problem.</p>
 
@@ -63,7 +69,7 @@ resolvers += "Akka Repository" at "http://repo.akka.io/releases/"
 
 <p>From the root directory of the project, run <code>sbt package</code>. You should see the source file get compiled, and a jar created under <code>./target</code>.</p>
 
-<p>The application should now be compiled and packaged up for usage. Let's look for a tasty VCF to crunch with our new Spark app. I went to <a href="ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz" title="100 genomes VCF chr1 download">1000genomes.org</a> and dug up a VCF containing only variants fro m human chromosome 22, the shortest autosomal contig. You can find the exact file I used <a href="ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr22.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz" title="1000 genomes VCF chr22 download">here</a>. Once unzipped, the file is 10GB, with over 1,000,000 lines. There are over 2000 samples in this VCF, which means each row has more than 2000 columns. I used the following spark-submit command to run the app on this VCF file:</p>
+<p>The application should now be compiled and packaged up for usage. Let's look for a tasty VCF to crunch with our new Spark app. I went to <a href="ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz" title="100 genomes VCF chr1 download">1000genomes.org</a> and dug up a VCF containing only variants from human chromosome 22, the shortest autosomal contig. You can find the exact file I used <a href="ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr22.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz" title="1000 genomes VCF chr22 download">here</a>. Once unzipped, the file is 10GB, with over 1,000,000 lines. There are over 2000 samples in this VCF, which means each row has more than 2000 columns. I used the following spark-submit command to run the app on this VCF file:</p>
 
 <p><code>bash spark-submit command
 time /Users/rob/bin/spark/spark-1.0.2-bin-hadoop2/bin/spark-submit \
