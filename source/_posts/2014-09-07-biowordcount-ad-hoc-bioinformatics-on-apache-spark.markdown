@@ -54,7 +54,7 @@ With the sbt file out of the way, let's create the proper spot for the source fi
 
 From the root directory of the project, run ```sbt package```. You should see the source file get compiled, and a jar created under ```./target```.
 
-The application should now be compiled and packaged up for usage. Let's look for a tasty VCF to crunch with our new Spark app. I went to [1000genomes.org][5] and dug up a VCF containing only variants from human chromosome 22, the shortest autosomal contig. You can find the exact file I used [here][4]. Once unzipped, the file is 10GB, with over 1,000,000 lines. There are over 2000 samples in this VCF, which means each row has more than 2000 columns. I used the following spark-submit command to run the app on this VCF file:
+The application should now be compiled and packaged up for usage. Let's look for a tasty VCF to crunch with our new Spark app. I went to [1000genomes.org][7] and dug up a [VCF containing only variants from human chromosome 22][4], the shortest autosomal contig. Once unzipped, the file is 10GB, with over 1,000,000 lines. There are over 2000 samples in this VCF, which means each row has more than 2000 columns. I used the following spark-submit command to run the app on this VCF file:
 
 ``` bash spark-submit command
 time /Users/rob/bin/spark/spark-1.0.2-bin-hadoop2/bin/spark-submit \
@@ -121,3 +121,4 @@ Not only is the Spark code faster to write (once you understand the basics), but
 [4]: ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr22.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz "1000 genomes VCF chr22 download"
 [5]: ftp://ftp-trace.ncbi.nih.gov/1000genomes/ftp/release/20130502/ALL.chr1.phase3_shapeit2_mvncall_integrated_v4.20130502.genotypes.vcf.gz "100 genomes VCF chr1 download"
 [6]: http://docs.scala-lang.org/tutorials/tour/anonymous-function-syntax.html "lambdas or anonymous functions"
+[7]: http://www.1000genomes.org/ "1000 genomes"
